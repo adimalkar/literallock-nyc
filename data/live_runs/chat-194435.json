@@ -1,0 +1,3407 @@
+{
+  "query": {
+    "question": "What did inspectors find at CONVENE on Rockefeller Plaza on October 5, 2026?",
+    "mode": "entity",
+    "camis": "50082702",
+    "inspection_date_key": "2026-10-05",
+    "inspection_type": null,
+    "borough": null,
+    "routing_profile": "exact",
+    "lexical_weight": 0.7,
+    "semantic_weight": 0.3,
+    "requirements": [
+      "identity",
+      "inspection_scope",
+      "findings",
+      "coverage"
+    ]
+  },
+  "snapshot": {
+    "dataset_id": "43nn-pn8j",
+    "source_url": "https://data.cityofnewyork.us/resource/43nn-pn8j.json",
+    "starter_revision": "AvenueJ/elastic-mistral-hacknight nyc_restaurant_analyst.ipynb blob 0b6687be11ffe0ecef3836dfc193a10d55773805",
+    "fetch_parameters": [
+      {
+        "name": "recent",
+        "url": "https://data.cityofnewyork.us/resource/43nn-pn8j.json",
+        "params": {
+          "$limit": 250,
+          "$where": "camis IS NOT NULL AND inspection_date IS NOT NULL",
+          "$order": "inspection_date DESC, camis ASC, violation_code ASC"
+        },
+        "retrieved_at": "2026-10-07T22:18:02+00:00",
+        "row_count": 250,
+        "limit": 250,
+        "cap_reached": true
+      },
+      {
+        "name": "selected_history",
+        "url": "https://data.cityofnewyork.us/resource/43nn-pn8j.json",
+        "params": {
+          "$limit": 250,
+          "$where": "camis IN ('50082702','50097749','41521360','50077029','41367337','41456579','40600383','50117425','50002693','50054023','50086444','50115621','50080428','50101927','41524607') AND inspection_date >= '2024-01-01T00:00:00' AND inspection_date <= '2026-10-06T00:00:00.000'",
+          "$order": "inspection_date DESC, camis ASC, violation_code ASC"
+        },
+        "retrieved_at": "2026-10-07T22:18:07+00:00",
+        "row_count": 241,
+        "limit": 250,
+        "cap_reached": false,
+        "selected_camis": [
+          "50082702",
+          "50097749",
+          "41521360",
+          "50077029",
+          "41367337",
+          "41456579",
+          "40600383",
+          "50117425",
+          "50002693",
+          "50054023",
+          "50086444",
+          "50115621",
+          "50080428",
+          "50101927",
+          "41524607"
+        ],
+        "shared_name_camis_in_recent": {
+          "SUBWAY": [
+            "41367337",
+            "41456579"
+          ],
+          "PARIS BAGUETTE": [
+            "41521360",
+            "50077029"
+          ],
+          "CONVENE": [
+            "50082702",
+            "50097749"
+          ]
+        }
+      }
+    ],
+    "retrieved_at": "2026-10-07T22:18:02+00:00",
+    "snapshot_id": "snap-852ae2e0d2d0",
+    "raw_rows_sha256": "009afa590e3a212ddbfd51dacb9549c7b958dcab6bb99e14f26364e43817c675",
+    "raw_row_count": 491,
+    "unique_raw_row_count": 407,
+    "cross_fetch_duplicate_rows": 84,
+    "identical_rows_within_a_fetch": {},
+    "unique_camis_count": 70,
+    "inspection_group_count": 122,
+    "scope_status_counts": {
+      "valid": 122
+    },
+    "coverage_counts": {
+      "complete_within_snapshot_rows": 121,
+      "possibly_truncated_at_fetch_cap": 1
+    },
+    "cap_reached": true,
+    "coverage_notes": [
+      "Bounded sample: 250 most recent citywide rows plus capped history (since 2024-01-01) for 15 selected CAMIS values. Not full-city coverage.",
+      "The final (date, CAMIS) pair of a capped fetch may be missing rows (coverage=possibly_truncated_at_fetch_cap).",
+      "Other restaurants inspected on the recent fetch's oldest date exist citywide but are absent from this sample.",
+      "An empty lookup means no matching records in this snapshot, not that NYC has no such inspection.",
+      "Grades/scores are recorded snapshot fields, not current restaurant status."
+    ],
+    "grouping_convention": "(camis, inspection_date day, inspection_type)",
+    "ingestion_outcome": {
+      "index": "literallock_nyc_inspections",
+      "inference_id": "literallock-embeddings",
+      "semantic_backend": "semantic_text",
+      "attempted": 122,
+      "indexed": 122,
+      "failed": 0,
+      "failures": [],
+      "docs_for_snapshot_in_index": 122,
+      "docs_in_index_total": 122,
+      "complete": true,
+      "indexed_at": "2026-10-07T22:18:40+00:00"
+    }
+  },
+  "lexical": [
+    {
+      "group_id": "g-50082702-2026-10-05-cycle-inspection-initial-inspection-24a4b5c5",
+      "rank": 1,
+      "score": 32.592113,
+      "group": {
+        "group_id": "g-50082702-2026-10-05-cycle-inspection-initial-inspection-24a4b5c5",
+        "camis": "50082702",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "CONVENE",
+        "title": "CAMIS 50082702 | CONVENE | 75 ROCKEFELLER PLAZA, Manhattan 10019 | 2026-10-05 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 50082702\nRestaurant name (DBA): CONVENE\nAddress: 75 ROCKEFELLER PLAZA, Manhattan 10019\nCuisine: American\nInspection date: 2026-10-05\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 7\nGrade: A\nViolations recorded in snapshot (1):\n- 04H [Critical]: Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+        "raw_row_ids": [
+          "r-8d6d3fe5c3d9c400"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "CONVENE"
+        ],
+        "boro": "Manhattan",
+        "boro_values": [
+          "Manhattan"
+        ],
+        "building": "75",
+        "street": "ROCKEFELLER PLAZA",
+        "zipcode": "10019",
+        "address": "75 ROCKEFELLER PLAZA, Manhattan 10019",
+        "cuisine_description": "American",
+        "inspection_date": "2026-10-05",
+        "inspection_date_raw_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "score_values": [
+          "7"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "04H"
+        ],
+        "critical_flags": [
+          "Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-8d6d3fe5c3d9c400",
+            "violation_code": "04H",
+            "violation_description": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+            "critical_flag": "Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-8d6d3fe5c3d9c400",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50082702",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "75",
+              "street": "ROCKEFELLER PLAZA",
+              "zipcode": "10019",
+              "phone": "5086272631",
+              "cuisine_description": "American",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "04H",
+              "violation_description": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+              "critical_flag": "Critical",
+              "score": "7",
+              "grade": "A",
+              "grade_date": "2026-10-05T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.759757359457",
+              "longitude": "-73.977901373434",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "010400",
+              "bin": "1034512",
+              "bbl": "1012670022",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.977901373434,
+                  40.759757359457
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 1,
+        "source_fetches": [
+          "recent",
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "lexical"
+    },
+    {
+      "group_id": "g-50082702-2025-07-18-cycle-inspection-initial-inspection-5782cd6b",
+      "rank": 2,
+      "score": 31.508623,
+      "group": {
+        "group_id": "g-50082702-2025-07-18-cycle-inspection-initial-inspection-5782cd6b",
+        "camis": "50082702",
+        "inspection_date_key": "2025-07-18",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "CONVENE",
+        "title": "CAMIS 50082702 | CONVENE | 75 ROCKEFELLER PLAZA, Manhattan 10019 | 2025-07-18 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 50082702\nRestaurant name (DBA): CONVENE\nAddress: 75 ROCKEFELLER PLAZA, Manhattan 10019\nCuisine: American\nInspection date: 2025-07-18\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 8\nGrade: A\nViolations recorded in snapshot (2):\n- 06C [Critical]: Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, service or from customer’s refillable, reusable container. Condiments not in single-service containers or dispensed directly by the vendor.\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-3c9bea82dac52618",
+          "r-a3da3697d4d9e354"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "CONVENE"
+        ],
+        "boro": "Manhattan",
+        "boro_values": [
+          "Manhattan"
+        ],
+        "building": "75",
+        "street": "ROCKEFELLER PLAZA",
+        "zipcode": "10019",
+        "address": "75 ROCKEFELLER PLAZA, Manhattan 10019",
+        "cuisine_description": "American",
+        "inspection_date": "2025-07-18",
+        "inspection_date_raw_values": [
+          "2025-07-18T00:00:00.000"
+        ],
+        "score_values": [
+          "8"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2025-07-18T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "06C",
+          "10F"
+        ],
+        "critical_flags": [
+          "Critical",
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-3c9bea82dac52618",
+            "violation_code": "06C",
+            "violation_description": "Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, service or from customer’s refillable, reusable container. Condiments not in single-service containers or dispensed directly by the vendor.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-a3da3697d4d9e354",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-3c9bea82dac52618",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50082702",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "75",
+              "street": "ROCKEFELLER PLAZA",
+              "zipcode": "10019",
+              "phone": "5086272631",
+              "cuisine_description": "American",
+              "inspection_date": "2025-07-18T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "06C",
+              "violation_description": "Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, service or from customer’s refillable, reusable container. Condiments not in single-service containers or dispensed directly by the vendor.",
+              "critical_flag": "Critical",
+              "score": "8",
+              "grade": "A",
+              "grade_date": "2025-07-18T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.759757359457",
+              "longitude": "-73.977901373434",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "010400",
+              "bin": "1034512",
+              "bbl": "1012670022",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.977901373434,
+                  40.759757359457
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-a3da3697d4d9e354",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50082702",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "75",
+              "street": "ROCKEFELLER PLAZA",
+              "zipcode": "10019",
+              "phone": "5086272631",
+              "cuisine_description": "American",
+              "inspection_date": "2025-07-18T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "8",
+              "grade": "A",
+              "grade_date": "2025-07-18T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.759757359457",
+              "longitude": "-73.977901373434",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "010400",
+              "bin": "1034512",
+              "bbl": "1012670022",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.977901373434,
+                  40.759757359457
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 2,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "lexical"
+    },
+    {
+      "group_id": "g-50097749-2026-10-05-cycle-inspection-initial-inspection-99da9658",
+      "rank": 3,
+      "score": 12.805462,
+      "group": {
+        "group_id": "g-50097749-2026-10-05-cycle-inspection-initial-inspection-99da9658",
+        "camis": "50097749",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "CONVENE",
+        "title": "CAMIS 50097749 | CONVENE | 530 5 AVENUE, Manhattan 10036 | 2026-10-05 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 50097749\nRestaurant name (DBA): CONVENE\nAddress: 530 5 AVENUE, Manhattan 10036\nCuisine: American\nInspection date: 2026-10-05\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 9\nGrade: A\nViolations recorded in snapshot (2):\n- 04H [Critical]: Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-5cf049ee6995348e",
+          "r-b4cf11226ea28a81"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "CONVENE"
+        ],
+        "boro": "Manhattan",
+        "boro_values": [
+          "Manhattan"
+        ],
+        "building": "530",
+        "street": "5 AVENUE",
+        "zipcode": "10036",
+        "address": "530 5 AVENUE, Manhattan 10036",
+        "cuisine_description": "American",
+        "inspection_date": "2026-10-05",
+        "inspection_date_raw_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "score_values": [
+          "9"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "04H",
+          "10F"
+        ],
+        "critical_flags": [
+          "Critical",
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-5cf049ee6995348e",
+            "violation_code": "04H",
+            "violation_description": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-b4cf11226ea28a81",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-5cf049ee6995348e",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "04H",
+              "violation_description": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+              "critical_flag": "Critical",
+              "score": "9",
+              "grade": "A",
+              "grade_date": "2026-10-05T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-b4cf11226ea28a81",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "9",
+              "grade": "A",
+              "grade_date": "2026-10-05T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 2,
+        "source_fetches": [
+          "recent",
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "lexical"
+    },
+    {
+      "group_id": "g-50097749-2025-04-11-cycle-inspection-initial-inspection-64505663",
+      "rank": 4,
+      "score": 10.377792,
+      "group": {
+        "group_id": "g-50097749-2025-04-11-cycle-inspection-initial-inspection-64505663",
+        "camis": "50097749",
+        "inspection_date_key": "2025-04-11",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "CONVENE",
+        "title": "CAMIS 50097749 | CONVENE | 530 5 AVENUE, Manhattan 10036 | 2025-04-11 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 50097749\nRestaurant name (DBA): CONVENE\nAddress: 530 5 AVENUE, Manhattan 10036\nCuisine: American\nInspection date: 2025-04-11\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 13\nGrade: A\nViolations recorded in snapshot (2):\n- 06C [Critical]: Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, service or from customer’s refillable, reusable container. Condiments not in single-service containers or dispensed directly by the vendor.\n- 06D [Critical]: Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+        "raw_row_ids": [
+          "r-e31b899355d4c672",
+          "r-b61e6c340756218a"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "CONVENE"
+        ],
+        "boro": "Manhattan",
+        "boro_values": [
+          "Manhattan"
+        ],
+        "building": "530",
+        "street": "5 AVENUE",
+        "zipcode": "10036",
+        "address": "530 5 AVENUE, Manhattan 10036",
+        "cuisine_description": "American",
+        "inspection_date": "2025-04-11",
+        "inspection_date_raw_values": [
+          "2025-04-11T00:00:00.000"
+        ],
+        "score_values": [
+          "13"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2025-04-11T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "06C",
+          "06D"
+        ],
+        "critical_flags": [
+          "Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-e31b899355d4c672",
+            "violation_code": "06C",
+            "violation_description": "Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, service or from customer’s refillable, reusable container. Condiments not in single-service containers or dispensed directly by the vendor.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-b61e6c340756218a",
+            "violation_code": "06D",
+            "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+            "critical_flag": "Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-e31b899355d4c672",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2025-04-11T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "06C",
+              "violation_description": "Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, service or from customer’s refillable, reusable container. Condiments not in single-service containers or dispensed directly by the vendor.",
+              "critical_flag": "Critical",
+              "score": "13",
+              "grade": "A",
+              "grade_date": "2025-04-11T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-b61e6c340756218a",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2025-04-11T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "06D",
+              "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+              "critical_flag": "Critical",
+              "score": "13",
+              "grade": "A",
+              "grade_date": "2025-04-11T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 2,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "lexical"
+    },
+    {
+      "group_id": "g-50097749-2024-05-31-cycle-inspection-initial-inspection-0fcc47ee",
+      "rank": 5,
+      "score": 10.190382,
+      "group": {
+        "group_id": "g-50097749-2024-05-31-cycle-inspection-initial-inspection-0fcc47ee",
+        "camis": "50097749",
+        "inspection_date_key": "2024-05-31",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "CONVENE",
+        "title": "CAMIS 50097749 | CONVENE | 530 5 AVENUE, Manhattan 10036 | 2024-05-31 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 50097749\nRestaurant name (DBA): CONVENE\nAddress: 530 5 AVENUE, Manhattan 10036\nCuisine: American\nInspection date: 2024-05-31\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 13\nGrade: A\nViolations recorded in snapshot (3):\n- 04N [Critical]: Filth flies or food/refuse/sewage associated with (FRSA) flies or other nuisance pests in establishment’s food and/or non-food areas. FRSA flies include house flies, blow flies, bottle flies, flesh flies, drain flies, Phorid flies and fruit flies.\n- 08A [Not Critical]: Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-868fbd80748e130d",
+          "r-84bde0a23cafeaa9",
+          "r-55f08890034f7894"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "CONVENE"
+        ],
+        "boro": "Manhattan",
+        "boro_values": [
+          "Manhattan"
+        ],
+        "building": "530",
+        "street": "5 AVENUE",
+        "zipcode": "10036",
+        "address": "530 5 AVENUE, Manhattan 10036",
+        "cuisine_description": "American",
+        "inspection_date": "2024-05-31",
+        "inspection_date_raw_values": [
+          "2024-05-31T00:00:00.000"
+        ],
+        "score_values": [
+          "13"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2024-05-31T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "04N",
+          "08A",
+          "10F"
+        ],
+        "critical_flags": [
+          "Critical",
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-868fbd80748e130d",
+            "violation_code": "04N",
+            "violation_description": "Filth flies or food/refuse/sewage associated with (FRSA) flies or other nuisance pests in establishment’s food and/or non-food areas. FRSA flies include house flies, blow flies, bottle flies, flesh flies, drain flies, Phorid flies and fruit flies.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-84bde0a23cafeaa9",
+            "violation_code": "08A",
+            "violation_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+            "critical_flag": "Not Critical"
+          },
+          {
+            "row_id": "r-55f08890034f7894",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-868fbd80748e130d",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2024-05-31T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "04N",
+              "violation_description": "Filth flies or food/refuse/sewage associated with (FRSA) flies or other nuisance pests in establishment’s food and/or non-food areas. FRSA flies include house flies, blow flies, bottle flies, flesh flies, drain flies, Phorid flies and fruit flies.",
+              "critical_flag": "Critical",
+              "score": "13",
+              "grade": "A",
+              "grade_date": "2024-05-31T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-84bde0a23cafeaa9",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2024-05-31T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "08A",
+              "violation_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+              "critical_flag": "Not Critical",
+              "score": "13",
+              "grade": "A",
+              "grade_date": "2024-05-31T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-55f08890034f7894",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2024-05-31T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "13",
+              "grade": "A",
+              "grade_date": "2024-05-31T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 3,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "lexical"
+    },
+    {
+      "group_id": "g-50088201-2026-10-05-cycle-inspection-initial-inspection-ab45d466",
+      "rank": 6,
+      "score": 7.7873487,
+      "group": {
+        "group_id": "g-50088201-2026-10-05-cycle-inspection-initial-inspection-ab45d466",
+        "camis": "50088201",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "LODUCA PIZZA",
+        "title": "CAMIS 50088201 | LODUCA PIZZA | 14 NEWKIRK PLAZA, Brooklyn 11226 | 2026-10-05 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 50088201\nRestaurant name (DBA): LODUCA PIZZA\nAddress: 14 NEWKIRK PLAZA, Brooklyn 11226\nCuisine: Pizza\nInspection date: 2026-10-05\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 13\nGrade: A\nViolations recorded in snapshot (2):\n- 02B [Critical]: Hot TCS food item not held at or above 140 °F.\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-99aa053ae32c922c",
+          "r-cfdffacce3880768"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "LODUCA PIZZA"
+        ],
+        "boro": "Brooklyn",
+        "boro_values": [
+          "Brooklyn"
+        ],
+        "building": "14",
+        "street": "NEWKIRK PLAZA",
+        "zipcode": "11226",
+        "address": "14 NEWKIRK PLAZA, Brooklyn 11226",
+        "cuisine_description": "Pizza",
+        "inspection_date": "2026-10-05",
+        "inspection_date_raw_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "score_values": [
+          "13"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "02B",
+          "10F"
+        ],
+        "critical_flags": [
+          "Critical",
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-99aa053ae32c922c",
+            "violation_code": "02B",
+            "violation_description": "Hot TCS food item not held at or above 140 °F.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-cfdffacce3880768",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-99aa053ae32c922c",
+            "fetches": [
+              "recent"
+            ],
+            "fields": {
+              "camis": "50088201",
+              "dba": "LODUCA PIZZA",
+              "boro": "Brooklyn",
+              "building": "14",
+              "street": "NEWKIRK PLAZA",
+              "zipcode": "11226",
+              "phone": "7188591501",
+              "cuisine_description": "Pizza",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "02B",
+              "violation_description": "Hot TCS food item not held at or above 140 °F.",
+              "critical_flag": "Critical",
+              "score": "13",
+              "grade": "A",
+              "grade_date": "2026-10-05T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.635003562635",
+              "longitude": "-73.962749276324",
+              "community_board": "314",
+              "council_district": "45",
+              "census_tract": "052000",
+              "bin": "3121186",
+              "bbl": "3052360022",
+              "nta": "BK42",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.962749276324,
+                  40.635003562635
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-cfdffacce3880768",
+            "fetches": [
+              "recent"
+            ],
+            "fields": {
+              "camis": "50088201",
+              "dba": "LODUCA PIZZA",
+              "boro": "Brooklyn",
+              "building": "14",
+              "street": "NEWKIRK PLAZA",
+              "zipcode": "11226",
+              "phone": "7188591501",
+              "cuisine_description": "Pizza",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "13",
+              "grade": "A",
+              "grade_date": "2026-10-05T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.635003562635",
+              "longitude": "-73.962749276324",
+              "community_board": "314",
+              "council_district": "45",
+              "census_tract": "052000",
+              "bin": "3121186",
+              "bbl": "3052360022",
+              "nta": "BK42",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.962749276324,
+                  40.635003562635
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 2,
+        "source_fetches": [
+          "recent"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "lexical"
+    }
+  ],
+  "semantic": [
+    {
+      "group_id": "g-50082702-2026-10-05-cycle-inspection-initial-inspection-24a4b5c5",
+      "rank": 1,
+      "score": 0.90096796,
+      "group": {
+        "group_id": "g-50082702-2026-10-05-cycle-inspection-initial-inspection-24a4b5c5",
+        "camis": "50082702",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "CONVENE",
+        "title": "CAMIS 50082702 | CONVENE | 75 ROCKEFELLER PLAZA, Manhattan 10019 | 2026-10-05 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 50082702\nRestaurant name (DBA): CONVENE\nAddress: 75 ROCKEFELLER PLAZA, Manhattan 10019\nCuisine: American\nInspection date: 2026-10-05\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 7\nGrade: A\nViolations recorded in snapshot (1):\n- 04H [Critical]: Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+        "raw_row_ids": [
+          "r-8d6d3fe5c3d9c400"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "CONVENE"
+        ],
+        "boro": "Manhattan",
+        "boro_values": [
+          "Manhattan"
+        ],
+        "building": "75",
+        "street": "ROCKEFELLER PLAZA",
+        "zipcode": "10019",
+        "address": "75 ROCKEFELLER PLAZA, Manhattan 10019",
+        "cuisine_description": "American",
+        "inspection_date": "2026-10-05",
+        "inspection_date_raw_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "score_values": [
+          "7"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "04H"
+        ],
+        "critical_flags": [
+          "Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-8d6d3fe5c3d9c400",
+            "violation_code": "04H",
+            "violation_description": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+            "critical_flag": "Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-8d6d3fe5c3d9c400",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50082702",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "75",
+              "street": "ROCKEFELLER PLAZA",
+              "zipcode": "10019",
+              "phone": "5086272631",
+              "cuisine_description": "American",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "04H",
+              "violation_description": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+              "critical_flag": "Critical",
+              "score": "7",
+              "grade": "A",
+              "grade_date": "2026-10-05T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.759757359457",
+              "longitude": "-73.977901373434",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "010400",
+              "bin": "1034512",
+              "bbl": "1012670022",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.977901373434,
+                  40.759757359457
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 1,
+        "source_fetches": [
+          "recent",
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "semantic"
+    },
+    {
+      "group_id": "g-50082702-2025-07-18-cycle-inspection-initial-inspection-5782cd6b",
+      "rank": 2,
+      "score": 0.8897085,
+      "group": {
+        "group_id": "g-50082702-2025-07-18-cycle-inspection-initial-inspection-5782cd6b",
+        "camis": "50082702",
+        "inspection_date_key": "2025-07-18",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "CONVENE",
+        "title": "CAMIS 50082702 | CONVENE | 75 ROCKEFELLER PLAZA, Manhattan 10019 | 2025-07-18 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 50082702\nRestaurant name (DBA): CONVENE\nAddress: 75 ROCKEFELLER PLAZA, Manhattan 10019\nCuisine: American\nInspection date: 2025-07-18\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 8\nGrade: A\nViolations recorded in snapshot (2):\n- 06C [Critical]: Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, service or from customer’s refillable, reusable container. Condiments not in single-service containers or dispensed directly by the vendor.\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-3c9bea82dac52618",
+          "r-a3da3697d4d9e354"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "CONVENE"
+        ],
+        "boro": "Manhattan",
+        "boro_values": [
+          "Manhattan"
+        ],
+        "building": "75",
+        "street": "ROCKEFELLER PLAZA",
+        "zipcode": "10019",
+        "address": "75 ROCKEFELLER PLAZA, Manhattan 10019",
+        "cuisine_description": "American",
+        "inspection_date": "2025-07-18",
+        "inspection_date_raw_values": [
+          "2025-07-18T00:00:00.000"
+        ],
+        "score_values": [
+          "8"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2025-07-18T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "06C",
+          "10F"
+        ],
+        "critical_flags": [
+          "Critical",
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-3c9bea82dac52618",
+            "violation_code": "06C",
+            "violation_description": "Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, service or from customer’s refillable, reusable container. Condiments not in single-service containers or dispensed directly by the vendor.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-a3da3697d4d9e354",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-3c9bea82dac52618",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50082702",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "75",
+              "street": "ROCKEFELLER PLAZA",
+              "zipcode": "10019",
+              "phone": "5086272631",
+              "cuisine_description": "American",
+              "inspection_date": "2025-07-18T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "06C",
+              "violation_description": "Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, service or from customer’s refillable, reusable container. Condiments not in single-service containers or dispensed directly by the vendor.",
+              "critical_flag": "Critical",
+              "score": "8",
+              "grade": "A",
+              "grade_date": "2025-07-18T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.759757359457",
+              "longitude": "-73.977901373434",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "010400",
+              "bin": "1034512",
+              "bbl": "1012670022",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.977901373434,
+                  40.759757359457
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-a3da3697d4d9e354",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50082702",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "75",
+              "street": "ROCKEFELLER PLAZA",
+              "zipcode": "10019",
+              "phone": "5086272631",
+              "cuisine_description": "American",
+              "inspection_date": "2025-07-18T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "8",
+              "grade": "A",
+              "grade_date": "2025-07-18T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.759757359457",
+              "longitude": "-73.977901373434",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "010400",
+              "bin": "1034512",
+              "bbl": "1012670022",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.977901373434,
+                  40.759757359457
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 2,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "semantic"
+    },
+    {
+      "group_id": "g-50097749-2026-10-05-cycle-inspection-initial-inspection-99da9658",
+      "rank": 3,
+      "score": 0.882154,
+      "group": {
+        "group_id": "g-50097749-2026-10-05-cycle-inspection-initial-inspection-99da9658",
+        "camis": "50097749",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "CONVENE",
+        "title": "CAMIS 50097749 | CONVENE | 530 5 AVENUE, Manhattan 10036 | 2026-10-05 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 50097749\nRestaurant name (DBA): CONVENE\nAddress: 530 5 AVENUE, Manhattan 10036\nCuisine: American\nInspection date: 2026-10-05\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 9\nGrade: A\nViolations recorded in snapshot (2):\n- 04H [Critical]: Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-5cf049ee6995348e",
+          "r-b4cf11226ea28a81"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "CONVENE"
+        ],
+        "boro": "Manhattan",
+        "boro_values": [
+          "Manhattan"
+        ],
+        "building": "530",
+        "street": "5 AVENUE",
+        "zipcode": "10036",
+        "address": "530 5 AVENUE, Manhattan 10036",
+        "cuisine_description": "American",
+        "inspection_date": "2026-10-05",
+        "inspection_date_raw_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "score_values": [
+          "9"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "04H",
+          "10F"
+        ],
+        "critical_flags": [
+          "Critical",
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-5cf049ee6995348e",
+            "violation_code": "04H",
+            "violation_description": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-b4cf11226ea28a81",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-5cf049ee6995348e",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "04H",
+              "violation_description": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+              "critical_flag": "Critical",
+              "score": "9",
+              "grade": "A",
+              "grade_date": "2026-10-05T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-b4cf11226ea28a81",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "9",
+              "grade": "A",
+              "grade_date": "2026-10-05T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 2,
+        "source_fetches": [
+          "recent",
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "semantic"
+    },
+    {
+      "group_id": "g-50097749-2025-04-11-cycle-inspection-initial-inspection-64505663",
+      "rank": 4,
+      "score": 0.8778595,
+      "group": {
+        "group_id": "g-50097749-2025-04-11-cycle-inspection-initial-inspection-64505663",
+        "camis": "50097749",
+        "inspection_date_key": "2025-04-11",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "CONVENE",
+        "title": "CAMIS 50097749 | CONVENE | 530 5 AVENUE, Manhattan 10036 | 2025-04-11 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 50097749\nRestaurant name (DBA): CONVENE\nAddress: 530 5 AVENUE, Manhattan 10036\nCuisine: American\nInspection date: 2025-04-11\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 13\nGrade: A\nViolations recorded in snapshot (2):\n- 06C [Critical]: Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, service or from customer’s refillable, reusable container. Condiments not in single-service containers or dispensed directly by the vendor.\n- 06D [Critical]: Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+        "raw_row_ids": [
+          "r-e31b899355d4c672",
+          "r-b61e6c340756218a"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "CONVENE"
+        ],
+        "boro": "Manhattan",
+        "boro_values": [
+          "Manhattan"
+        ],
+        "building": "530",
+        "street": "5 AVENUE",
+        "zipcode": "10036",
+        "address": "530 5 AVENUE, Manhattan 10036",
+        "cuisine_description": "American",
+        "inspection_date": "2025-04-11",
+        "inspection_date_raw_values": [
+          "2025-04-11T00:00:00.000"
+        ],
+        "score_values": [
+          "13"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2025-04-11T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "06C",
+          "06D"
+        ],
+        "critical_flags": [
+          "Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-e31b899355d4c672",
+            "violation_code": "06C",
+            "violation_description": "Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, service or from customer’s refillable, reusable container. Condiments not in single-service containers or dispensed directly by the vendor.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-b61e6c340756218a",
+            "violation_code": "06D",
+            "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+            "critical_flag": "Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-e31b899355d4c672",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2025-04-11T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "06C",
+              "violation_description": "Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, service or from customer’s refillable, reusable container. Condiments not in single-service containers or dispensed directly by the vendor.",
+              "critical_flag": "Critical",
+              "score": "13",
+              "grade": "A",
+              "grade_date": "2025-04-11T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-b61e6c340756218a",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2025-04-11T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "06D",
+              "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+              "critical_flag": "Critical",
+              "score": "13",
+              "grade": "A",
+              "grade_date": "2025-04-11T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 2,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "semantic"
+    },
+    {
+      "group_id": "g-50097749-2024-05-31-cycle-inspection-initial-inspection-0fcc47ee",
+      "rank": 5,
+      "score": 0.87692046,
+      "group": {
+        "group_id": "g-50097749-2024-05-31-cycle-inspection-initial-inspection-0fcc47ee",
+        "camis": "50097749",
+        "inspection_date_key": "2024-05-31",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "CONVENE",
+        "title": "CAMIS 50097749 | CONVENE | 530 5 AVENUE, Manhattan 10036 | 2024-05-31 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 50097749\nRestaurant name (DBA): CONVENE\nAddress: 530 5 AVENUE, Manhattan 10036\nCuisine: American\nInspection date: 2024-05-31\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 13\nGrade: A\nViolations recorded in snapshot (3):\n- 04N [Critical]: Filth flies or food/refuse/sewage associated with (FRSA) flies or other nuisance pests in establishment’s food and/or non-food areas. FRSA flies include house flies, blow flies, bottle flies, flesh flies, drain flies, Phorid flies and fruit flies.\n- 08A [Not Critical]: Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-868fbd80748e130d",
+          "r-84bde0a23cafeaa9",
+          "r-55f08890034f7894"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "CONVENE"
+        ],
+        "boro": "Manhattan",
+        "boro_values": [
+          "Manhattan"
+        ],
+        "building": "530",
+        "street": "5 AVENUE",
+        "zipcode": "10036",
+        "address": "530 5 AVENUE, Manhattan 10036",
+        "cuisine_description": "American",
+        "inspection_date": "2024-05-31",
+        "inspection_date_raw_values": [
+          "2024-05-31T00:00:00.000"
+        ],
+        "score_values": [
+          "13"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2024-05-31T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "04N",
+          "08A",
+          "10F"
+        ],
+        "critical_flags": [
+          "Critical",
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-868fbd80748e130d",
+            "violation_code": "04N",
+            "violation_description": "Filth flies or food/refuse/sewage associated with (FRSA) flies or other nuisance pests in establishment’s food and/or non-food areas. FRSA flies include house flies, blow flies, bottle flies, flesh flies, drain flies, Phorid flies and fruit flies.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-84bde0a23cafeaa9",
+            "violation_code": "08A",
+            "violation_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+            "critical_flag": "Not Critical"
+          },
+          {
+            "row_id": "r-55f08890034f7894",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-868fbd80748e130d",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2024-05-31T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "04N",
+              "violation_description": "Filth flies or food/refuse/sewage associated with (FRSA) flies or other nuisance pests in establishment’s food and/or non-food areas. FRSA flies include house flies, blow flies, bottle flies, flesh flies, drain flies, Phorid flies and fruit flies.",
+              "critical_flag": "Critical",
+              "score": "13",
+              "grade": "A",
+              "grade_date": "2024-05-31T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-84bde0a23cafeaa9",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2024-05-31T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "08A",
+              "violation_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+              "critical_flag": "Not Critical",
+              "score": "13",
+              "grade": "A",
+              "grade_date": "2024-05-31T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-55f08890034f7894",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2024-05-31T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "13",
+              "grade": "A",
+              "grade_date": "2024-05-31T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 3,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "semantic"
+    },
+    {
+      "group_id": "g-50117652-2026-10-05-administrative-miscellaneous-initial-inspection-e08a4499",
+      "rank": 6,
+      "score": 0.86921847,
+      "group": {
+        "group_id": "g-50117652-2026-10-05-administrative-miscellaneous-initial-inspection-e08a4499",
+        "camis": "50117652",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Administrative Miscellaneous / Initial Inspection",
+        "dba": "5 O'CLOCK SOMEWHERE",
+        "title": "CAMIS 50117652 | 5 O'CLOCK SOMEWHERE | 560 7 AVENUE, Manhattan 10018 | 2026-10-05 | Administrative Miscellaneous / Initial Inspection",
+        "body": "CAMIS: 50117652\nRestaurant name (DBA): 5 O'CLOCK SOMEWHERE\nAddress: 560 7 AVENUE, Manhattan 10018\nCuisine: American\nInspection date: 2026-10-05\nInspection type: Administrative Miscellaneous / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: not recorded\nGrade: not recorded\nViolations recorded in snapshot (1):\n- 20-04 [Not Critical]: “Choking first aid” poster not posted. “Alcohol and Pregnancy” warning sign not posted. Resuscitation equipment: exhaled air resuscitation masks (adult & pediatric), latex gloves, sign not posted.",
+        "raw_row_ids": [
+          "r-44768bb3a4825d19"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "5 O'CLOCK SOMEWHERE"
+        ],
+        "boro": "Manhattan",
+        "boro_values": [
+          "Manhattan"
+        ],
+        "building": "560",
+        "street": "7 AVENUE",
+        "zipcode": "10018",
+        "address": "560 7 AVENUE, Manhattan 10018",
+        "cuisine_description": "American",
+        "inspection_date": "2026-10-05",
+        "inspection_date_raw_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "score_values": [],
+        "grade_values": [],
+        "grade_date_values": [],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "20-04"
+        ],
+        "critical_flags": [
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-44768bb3a4825d19",
+            "violation_code": "20-04",
+            "violation_description": "“Choking first aid” poster not posted. “Alcohol and Pregnancy” warning sign not posted. Resuscitation equipment: exhaled air resuscitation masks (adult & pediatric), latex gloves, sign not posted.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-44768bb3a4825d19",
+            "fetches": [
+              "recent"
+            ],
+            "fields": {
+              "camis": "50117652",
+              "dba": "5 O'CLOCK SOMEWHERE",
+              "boro": "Manhattan",
+              "building": "560",
+              "street": "7 AVENUE",
+              "zipcode": "10018",
+              "phone": "2122213007",
+              "cuisine_description": "American",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "20-04",
+              "violation_description": "“Choking first aid” poster not posted. “Alcohol and Pregnancy” warning sign not posted. Resuscitation equipment: exhaled air resuscitation masks (adult & pediatric), latex gloves, sign not posted.",
+              "critical_flag": "Not Critical",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Administrative Miscellaneous / Initial Inspection",
+              "latitude": "40.7548402337",
+              "longitude": "-73.987832579315",
+              "community_board": "105",
+              "council_district": "03",
+              "census_tract": "011300",
+              "bin": "1090579",
+              "bbl": "1010120029",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.987832579315,
+                  40.7548402337
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 1,
+        "source_fetches": [
+          "recent"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "semantic"
+    }
+  ],
+  "candidates": [
+    {
+      "group_id": "g-50082702-2026-10-05-cycle-inspection-initial-inspection-24a4b5c5",
+      "group": {
+        "group_id": "g-50082702-2026-10-05-cycle-inspection-initial-inspection-24a4b5c5",
+        "camis": "50082702",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "CONVENE",
+        "title": "CAMIS 50082702 | CONVENE | 75 ROCKEFELLER PLAZA, Manhattan 10019 | 2026-10-05 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 50082702\nRestaurant name (DBA): CONVENE\nAddress: 75 ROCKEFELLER PLAZA, Manhattan 10019\nCuisine: American\nInspection date: 2026-10-05\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 7\nGrade: A\nViolations recorded in snapshot (1):\n- 04H [Critical]: Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+        "raw_row_ids": [
+          "r-8d6d3fe5c3d9c400"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "CONVENE"
+        ],
+        "boro": "Manhattan",
+        "boro_values": [
+          "Manhattan"
+        ],
+        "building": "75",
+        "street": "ROCKEFELLER PLAZA",
+        "zipcode": "10019",
+        "address": "75 ROCKEFELLER PLAZA, Manhattan 10019",
+        "cuisine_description": "American",
+        "inspection_date": "2026-10-05",
+        "inspection_date_raw_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "score_values": [
+          "7"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "04H"
+        ],
+        "critical_flags": [
+          "Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-8d6d3fe5c3d9c400",
+            "violation_code": "04H",
+            "violation_description": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+            "critical_flag": "Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-8d6d3fe5c3d9c400",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50082702",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "75",
+              "street": "ROCKEFELLER PLAZA",
+              "zipcode": "10019",
+              "phone": "5086272631",
+              "cuisine_description": "American",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "04H",
+              "violation_description": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+              "critical_flag": "Critical",
+              "score": "7",
+              "grade": "A",
+              "grade_date": "2026-10-05T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.759757359457",
+              "longitude": "-73.977901373434",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "010400",
+              "bin": "1034512",
+              "bbl": "1012670022",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.977901373434,
+                  40.759757359457
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 1,
+        "source_fetches": [
+          "recent",
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "fused_score": 0.016393442622950817,
+      "provenance": "initial",
+      "lexical_rank": 1,
+      "lexical_score": 32.592113,
+      "semantic_rank": 1,
+      "semantic_score": 0.90096796,
+      "accepted": true,
+      "reason": "ENTITY_MATCH"
+    },
+    {
+      "group_id": "g-50082702-2025-07-18-cycle-inspection-initial-inspection-5782cd6b",
+      "group": {
+        "group_id": "g-50082702-2025-07-18-cycle-inspection-initial-inspection-5782cd6b",
+        "camis": "50082702",
+        "inspection_date_key": "2025-07-18",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "CONVENE",
+        "title": "CAMIS 50082702 | CONVENE | 75 ROCKEFELLER PLAZA, Manhattan 10019 | 2025-07-18 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 50082702\nRestaurant name (DBA): CONVENE\nAddress: 75 ROCKEFELLER PLAZA, Manhattan 10019\nCuisine: American\nInspection date: 2025-07-18\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 8\nGrade: A\nViolations recorded in snapshot (2):\n- 06C [Critical]: Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, service or from customer’s refillable, reusable container. Condiments not in single-service containers or dispensed directly by the vendor.\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-3c9bea82dac52618",
+          "r-a3da3697d4d9e354"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "CONVENE"
+        ],
+        "boro": "Manhattan",
+        "boro_values": [
+          "Manhattan"
+        ],
+        "building": "75",
+        "street": "ROCKEFELLER PLAZA",
+        "zipcode": "10019",
+        "address": "75 ROCKEFELLER PLAZA, Manhattan 10019",
+        "cuisine_description": "American",
+        "inspection_date": "2025-07-18",
+        "inspection_date_raw_values": [
+          "2025-07-18T00:00:00.000"
+        ],
+        "score_values": [
+          "8"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2025-07-18T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "06C",
+          "10F"
+        ],
+        "critical_flags": [
+          "Critical",
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-3c9bea82dac52618",
+            "violation_code": "06C",
+            "violation_description": "Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, service or from customer’s refillable, reusable container. Condiments not in single-service containers or dispensed directly by the vendor.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-a3da3697d4d9e354",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-3c9bea82dac52618",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50082702",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "75",
+              "street": "ROCKEFELLER PLAZA",
+              "zipcode": "10019",
+              "phone": "5086272631",
+              "cuisine_description": "American",
+              "inspection_date": "2025-07-18T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "06C",
+              "violation_description": "Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, service or from customer’s refillable, reusable container. Condiments not in single-service containers or dispensed directly by the vendor.",
+              "critical_flag": "Critical",
+              "score": "8",
+              "grade": "A",
+              "grade_date": "2025-07-18T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.759757359457",
+              "longitude": "-73.977901373434",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "010400",
+              "bin": "1034512",
+              "bbl": "1012670022",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.977901373434,
+                  40.759757359457
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-a3da3697d4d9e354",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50082702",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "75",
+              "street": "ROCKEFELLER PLAZA",
+              "zipcode": "10019",
+              "phone": "5086272631",
+              "cuisine_description": "American",
+              "inspection_date": "2025-07-18T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "8",
+              "grade": "A",
+              "grade_date": "2025-07-18T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.759757359457",
+              "longitude": "-73.977901373434",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "010400",
+              "bin": "1034512",
+              "bbl": "1012670022",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.977901373434,
+                  40.759757359457
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 2,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "fused_score": 0.016129032258064516,
+      "provenance": "initial",
+      "lexical_rank": 2,
+      "lexical_score": 31.508623,
+      "semantic_rank": 2,
+      "semantic_score": 0.8897085,
+      "accepted": false,
+      "reason": "DATE_MISMATCH"
+    },
+    {
+      "group_id": "g-50097749-2026-10-05-cycle-inspection-initial-inspection-99da9658",
+      "group": {
+        "group_id": "g-50097749-2026-10-05-cycle-inspection-initial-inspection-99da9658",
+        "camis": "50097749",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "CONVENE",
+        "title": "CAMIS 50097749 | CONVENE | 530 5 AVENUE, Manhattan 10036 | 2026-10-05 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 50097749\nRestaurant name (DBA): CONVENE\nAddress: 530 5 AVENUE, Manhattan 10036\nCuisine: American\nInspection date: 2026-10-05\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 9\nGrade: A\nViolations recorded in snapshot (2):\n- 04H [Critical]: Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-5cf049ee6995348e",
+          "r-b4cf11226ea28a81"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "CONVENE"
+        ],
+        "boro": "Manhattan",
+        "boro_values": [
+          "Manhattan"
+        ],
+        "building": "530",
+        "street": "5 AVENUE",
+        "zipcode": "10036",
+        "address": "530 5 AVENUE, Manhattan 10036",
+        "cuisine_description": "American",
+        "inspection_date": "2026-10-05",
+        "inspection_date_raw_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "score_values": [
+          "9"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "04H",
+          "10F"
+        ],
+        "critical_flags": [
+          "Critical",
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-5cf049ee6995348e",
+            "violation_code": "04H",
+            "violation_description": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-b4cf11226ea28a81",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-5cf049ee6995348e",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "04H",
+              "violation_description": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+              "critical_flag": "Critical",
+              "score": "9",
+              "grade": "A",
+              "grade_date": "2026-10-05T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-b4cf11226ea28a81",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "9",
+              "grade": "A",
+              "grade_date": "2026-10-05T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 2,
+        "source_fetches": [
+          "recent",
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "fused_score": 0.015873015873015872,
+      "provenance": "initial",
+      "lexical_rank": 3,
+      "lexical_score": 12.805462,
+      "semantic_rank": 3,
+      "semantic_score": 0.882154,
+      "accepted": false,
+      "reason": "ENTITY_MISMATCH"
+    },
+    {
+      "group_id": "g-50097749-2025-04-11-cycle-inspection-initial-inspection-64505663",
+      "group": {
+        "group_id": "g-50097749-2025-04-11-cycle-inspection-initial-inspection-64505663",
+        "camis": "50097749",
+        "inspection_date_key": "2025-04-11",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "CONVENE",
+        "title": "CAMIS 50097749 | CONVENE | 530 5 AVENUE, Manhattan 10036 | 2025-04-11 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 50097749\nRestaurant name (DBA): CONVENE\nAddress: 530 5 AVENUE, Manhattan 10036\nCuisine: American\nInspection date: 2025-04-11\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 13\nGrade: A\nViolations recorded in snapshot (2):\n- 06C [Critical]: Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, service or from customer’s refillable, reusable container. Condiments not in single-service containers or dispensed directly by the vendor.\n- 06D [Critical]: Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+        "raw_row_ids": [
+          "r-e31b899355d4c672",
+          "r-b61e6c340756218a"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "CONVENE"
+        ],
+        "boro": "Manhattan",
+        "boro_values": [
+          "Manhattan"
+        ],
+        "building": "530",
+        "street": "5 AVENUE",
+        "zipcode": "10036",
+        "address": "530 5 AVENUE, Manhattan 10036",
+        "cuisine_description": "American",
+        "inspection_date": "2025-04-11",
+        "inspection_date_raw_values": [
+          "2025-04-11T00:00:00.000"
+        ],
+        "score_values": [
+          "13"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2025-04-11T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "06C",
+          "06D"
+        ],
+        "critical_flags": [
+          "Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-e31b899355d4c672",
+            "violation_code": "06C",
+            "violation_description": "Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, service or from customer’s refillable, reusable container. Condiments not in single-service containers or dispensed directly by the vendor.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-b61e6c340756218a",
+            "violation_code": "06D",
+            "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+            "critical_flag": "Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-e31b899355d4c672",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2025-04-11T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "06C",
+              "violation_description": "Food, supplies, or equipment not protected from potential source of contamination during storage, preparation, transportation, display, service or from customer’s refillable, reusable container. Condiments not in single-service containers or dispensed directly by the vendor.",
+              "critical_flag": "Critical",
+              "score": "13",
+              "grade": "A",
+              "grade_date": "2025-04-11T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-b61e6c340756218a",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2025-04-11T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "06D",
+              "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+              "critical_flag": "Critical",
+              "score": "13",
+              "grade": "A",
+              "grade_date": "2025-04-11T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 2,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "fused_score": 0.015625,
+      "provenance": "initial",
+      "lexical_rank": 4,
+      "lexical_score": 10.377792,
+      "semantic_rank": 4,
+      "semantic_score": 0.8778595,
+      "accepted": false,
+      "reason": "ENTITY_MISMATCH"
+    },
+    {
+      "group_id": "g-50097749-2024-05-31-cycle-inspection-initial-inspection-0fcc47ee",
+      "group": {
+        "group_id": "g-50097749-2024-05-31-cycle-inspection-initial-inspection-0fcc47ee",
+        "camis": "50097749",
+        "inspection_date_key": "2024-05-31",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "CONVENE",
+        "title": "CAMIS 50097749 | CONVENE | 530 5 AVENUE, Manhattan 10036 | 2024-05-31 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 50097749\nRestaurant name (DBA): CONVENE\nAddress: 530 5 AVENUE, Manhattan 10036\nCuisine: American\nInspection date: 2024-05-31\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 13\nGrade: A\nViolations recorded in snapshot (3):\n- 04N [Critical]: Filth flies or food/refuse/sewage associated with (FRSA) flies or other nuisance pests in establishment’s food and/or non-food areas. FRSA flies include house flies, blow flies, bottle flies, flesh flies, drain flies, Phorid flies and fruit flies.\n- 08A [Not Critical]: Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-868fbd80748e130d",
+          "r-84bde0a23cafeaa9",
+          "r-55f08890034f7894"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "CONVENE"
+        ],
+        "boro": "Manhattan",
+        "boro_values": [
+          "Manhattan"
+        ],
+        "building": "530",
+        "street": "5 AVENUE",
+        "zipcode": "10036",
+        "address": "530 5 AVENUE, Manhattan 10036",
+        "cuisine_description": "American",
+        "inspection_date": "2024-05-31",
+        "inspection_date_raw_values": [
+          "2024-05-31T00:00:00.000"
+        ],
+        "score_values": [
+          "13"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2024-05-31T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "04N",
+          "08A",
+          "10F"
+        ],
+        "critical_flags": [
+          "Critical",
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-868fbd80748e130d",
+            "violation_code": "04N",
+            "violation_description": "Filth flies or food/refuse/sewage associated with (FRSA) flies or other nuisance pests in establishment’s food and/or non-food areas. FRSA flies include house flies, blow flies, bottle flies, flesh flies, drain flies, Phorid flies and fruit flies.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-84bde0a23cafeaa9",
+            "violation_code": "08A",
+            "violation_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+            "critical_flag": "Not Critical"
+          },
+          {
+            "row_id": "r-55f08890034f7894",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-868fbd80748e130d",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2024-05-31T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "04N",
+              "violation_description": "Filth flies or food/refuse/sewage associated with (FRSA) flies or other nuisance pests in establishment’s food and/or non-food areas. FRSA flies include house flies, blow flies, bottle flies, flesh flies, drain flies, Phorid flies and fruit flies.",
+              "critical_flag": "Critical",
+              "score": "13",
+              "grade": "A",
+              "grade_date": "2024-05-31T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-84bde0a23cafeaa9",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2024-05-31T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "08A",
+              "violation_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+              "critical_flag": "Not Critical",
+              "score": "13",
+              "grade": "A",
+              "grade_date": "2024-05-31T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-55f08890034f7894",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2024-05-31T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "13",
+              "grade": "A",
+              "grade_date": "2024-05-31T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 3,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "fused_score": 0.015384615384615384,
+      "provenance": "initial",
+      "lexical_rank": 5,
+      "lexical_score": 10.190382,
+      "semantic_rank": 5,
+      "semantic_score": 0.87692046,
+      "accepted": false,
+      "reason": "ENTITY_MISMATCH"
+    },
+    {
+      "group_id": "g-50088201-2026-10-05-cycle-inspection-initial-inspection-ab45d466",
+      "group": {
+        "group_id": "g-50088201-2026-10-05-cycle-inspection-initial-inspection-ab45d466",
+        "camis": "50088201",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "LODUCA PIZZA",
+        "title": "CAMIS 50088201 | LODUCA PIZZA | 14 NEWKIRK PLAZA, Brooklyn 11226 | 2026-10-05 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 50088201\nRestaurant name (DBA): LODUCA PIZZA\nAddress: 14 NEWKIRK PLAZA, Brooklyn 11226\nCuisine: Pizza\nInspection date: 2026-10-05\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 13\nGrade: A\nViolations recorded in snapshot (2):\n- 02B [Critical]: Hot TCS food item not held at or above 140 °F.\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-99aa053ae32c922c",
+          "r-cfdffacce3880768"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "LODUCA PIZZA"
+        ],
+        "boro": "Brooklyn",
+        "boro_values": [
+          "Brooklyn"
+        ],
+        "building": "14",
+        "street": "NEWKIRK PLAZA",
+        "zipcode": "11226",
+        "address": "14 NEWKIRK PLAZA, Brooklyn 11226",
+        "cuisine_description": "Pizza",
+        "inspection_date": "2026-10-05",
+        "inspection_date_raw_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "score_values": [
+          "13"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "02B",
+          "10F"
+        ],
+        "critical_flags": [
+          "Critical",
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-99aa053ae32c922c",
+            "violation_code": "02B",
+            "violation_description": "Hot TCS food item not held at or above 140 °F.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-cfdffacce3880768",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-99aa053ae32c922c",
+            "fetches": [
+              "recent"
+            ],
+            "fields": {
+              "camis": "50088201",
+              "dba": "LODUCA PIZZA",
+              "boro": "Brooklyn",
+              "building": "14",
+              "street": "NEWKIRK PLAZA",
+              "zipcode": "11226",
+              "phone": "7188591501",
+              "cuisine_description": "Pizza",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "02B",
+              "violation_description": "Hot TCS food item not held at or above 140 °F.",
+              "critical_flag": "Critical",
+              "score": "13",
+              "grade": "A",
+              "grade_date": "2026-10-05T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.635003562635",
+              "longitude": "-73.962749276324",
+              "community_board": "314",
+              "council_district": "45",
+              "census_tract": "052000",
+              "bin": "3121186",
+              "bbl": "3052360022",
+              "nta": "BK42",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.962749276324,
+                  40.635003562635
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-cfdffacce3880768",
+            "fetches": [
+              "recent"
+            ],
+            "fields": {
+              "camis": "50088201",
+              "dba": "LODUCA PIZZA",
+              "boro": "Brooklyn",
+              "building": "14",
+              "street": "NEWKIRK PLAZA",
+              "zipcode": "11226",
+              "phone": "7188591501",
+              "cuisine_description": "Pizza",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "13",
+              "grade": "A",
+              "grade_date": "2026-10-05T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.635003562635",
+              "longitude": "-73.962749276324",
+              "community_board": "314",
+              "council_district": "45",
+              "census_tract": "052000",
+              "bin": "3121186",
+              "bbl": "3052360022",
+              "nta": "BK42",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.962749276324,
+                  40.635003562635
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 2,
+        "source_fetches": [
+          "recent"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "fused_score": 0.010606060606060605,
+      "provenance": "initial",
+      "lexical_rank": 6,
+      "lexical_score": 7.7873487,
+      "accepted": false,
+      "reason": "ENTITY_MISMATCH"
+    },
+    {
+      "group_id": "g-50117652-2026-10-05-administrative-miscellaneous-initial-inspection-e08a4499",
+      "group": {
+        "group_id": "g-50117652-2026-10-05-administrative-miscellaneous-initial-inspection-e08a4499",
+        "camis": "50117652",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Administrative Miscellaneous / Initial Inspection",
+        "dba": "5 O'CLOCK SOMEWHERE",
+        "title": "CAMIS 50117652 | 5 O'CLOCK SOMEWHERE | 560 7 AVENUE, Manhattan 10018 | 2026-10-05 | Administrative Miscellaneous / Initial Inspection",
+        "body": "CAMIS: 50117652\nRestaurant name (DBA): 5 O'CLOCK SOMEWHERE\nAddress: 560 7 AVENUE, Manhattan 10018\nCuisine: American\nInspection date: 2026-10-05\nInspection type: Administrative Miscellaneous / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: not recorded\nGrade: not recorded\nViolations recorded in snapshot (1):\n- 20-04 [Not Critical]: “Choking first aid” poster not posted. “Alcohol and Pregnancy” warning sign not posted. Resuscitation equipment: exhaled air resuscitation masks (adult & pediatric), latex gloves, sign not posted.",
+        "raw_row_ids": [
+          "r-44768bb3a4825d19"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "5 O'CLOCK SOMEWHERE"
+        ],
+        "boro": "Manhattan",
+        "boro_values": [
+          "Manhattan"
+        ],
+        "building": "560",
+        "street": "7 AVENUE",
+        "zipcode": "10018",
+        "address": "560 7 AVENUE, Manhattan 10018",
+        "cuisine_description": "American",
+        "inspection_date": "2026-10-05",
+        "inspection_date_raw_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "score_values": [],
+        "grade_values": [],
+        "grade_date_values": [],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "20-04"
+        ],
+        "critical_flags": [
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-44768bb3a4825d19",
+            "violation_code": "20-04",
+            "violation_description": "“Choking first aid” poster not posted. “Alcohol and Pregnancy” warning sign not posted. Resuscitation equipment: exhaled air resuscitation masks (adult & pediatric), latex gloves, sign not posted.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-44768bb3a4825d19",
+            "fetches": [
+              "recent"
+            ],
+            "fields": {
+              "camis": "50117652",
+              "dba": "5 O'CLOCK SOMEWHERE",
+              "boro": "Manhattan",
+              "building": "560",
+              "street": "7 AVENUE",
+              "zipcode": "10018",
+              "phone": "2122213007",
+              "cuisine_description": "American",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "20-04",
+              "violation_description": "“Choking first aid” poster not posted. “Alcohol and Pregnancy” warning sign not posted. Resuscitation equipment: exhaled air resuscitation masks (adult & pediatric), latex gloves, sign not posted.",
+              "critical_flag": "Not Critical",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Administrative Miscellaneous / Initial Inspection",
+              "latitude": "40.7548402337",
+              "longitude": "-73.987832579315",
+              "community_board": "105",
+              "council_district": "03",
+              "census_tract": "011300",
+              "bin": "1090579",
+              "bbl": "1010120029",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.987832579315,
+                  40.7548402337
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 1,
+        "source_fetches": [
+          "recent"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "fused_score": 0.004545454545454545,
+      "provenance": "initial",
+      "semantic_rank": 6,
+      "semantic_score": 0.86921847,
+      "accepted": false,
+      "reason": "ENTITY_MISMATCH"
+    }
+  ],
+  "evidence": [
+    {
+      "group_id": "g-50082702-2026-10-05-cycle-inspection-initial-inspection-24a4b5c5",
+      "camis": "50082702",
+      "inspection_date_key": "2026-10-05",
+      "inspection_type": "Cycle Inspection / Initial Inspection",
+      "dba": "CONVENE",
+      "title": "CAMIS 50082702 | CONVENE | 75 ROCKEFELLER PLAZA, Manhattan 10019 | 2026-10-05 | Cycle Inspection / Initial Inspection",
+      "body": "CAMIS: 50082702\nRestaurant name (DBA): CONVENE\nAddress: 75 ROCKEFELLER PLAZA, Manhattan 10019\nCuisine: American\nInspection date: 2026-10-05\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 7\nGrade: A\nViolations recorded in snapshot (1):\n- 04H [Critical]: Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+      "raw_row_ids": [
+        "r-8d6d3fe5c3d9c400"
+      ],
+      "scope_status": "valid",
+      "coverage": "complete_within_snapshot_rows",
+      "snapshot_id": "snap-852ae2e0d2d0",
+      "dataset_id": "43nn-pn8j",
+      "dba_values": [
+        "CONVENE"
+      ],
+      "boro": "Manhattan",
+      "boro_values": [
+        "Manhattan"
+      ],
+      "building": "75",
+      "street": "ROCKEFELLER PLAZA",
+      "zipcode": "10019",
+      "address": "75 ROCKEFELLER PLAZA, Manhattan 10019",
+      "cuisine_description": "American",
+      "inspection_date": "2026-10-05",
+      "inspection_date_raw_values": [
+        "2026-10-05T00:00:00.000"
+      ],
+      "score_values": [
+        "7"
+      ],
+      "grade_values": [
+        "A"
+      ],
+      "grade_date_values": [
+        "2026-10-05T00:00:00.000"
+      ],
+      "action_values": [
+        "Violations were cited in the following area(s)."
+      ],
+      "violation_codes": [
+        "04H"
+      ],
+      "critical_flags": [
+        "Critical"
+      ],
+      "violations": [
+        {
+          "row_id": "r-8d6d3fe5c3d9c400",
+          "violation_code": "04H",
+          "violation_description": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+          "critical_flag": "Critical"
+        }
+      ],
+      "raw_rows": [
+        {
+          "row_id": "r-8d6d3fe5c3d9c400",
+          "fetches": [
+            "recent",
+            "selected_history"
+          ],
+          "fields": {
+            "camis": "50082702",
+            "dba": "CONVENE",
+            "boro": "Manhattan",
+            "building": "75",
+            "street": "ROCKEFELLER PLAZA",
+            "zipcode": "10019",
+            "phone": "5086272631",
+            "cuisine_description": "American",
+            "inspection_date": "2026-10-05T00:00:00.000",
+            "action": "Violations were cited in the following area(s).",
+            "violation_code": "04H",
+            "violation_description": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+            "critical_flag": "Critical",
+            "score": "7",
+            "grade": "A",
+            "grade_date": "2026-10-05T00:00:00.000",
+            "record_date": "2026-10-07T06:00:21.000",
+            "inspection_type": "Cycle Inspection / Initial Inspection",
+            "latitude": "40.759757359457",
+            "longitude": "-73.977901373434",
+            "community_board": "105",
+            "council_district": "04",
+            "census_tract": "010400",
+            "bin": "1034512",
+            "bbl": "1012670022",
+            "nta": "MN17",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -73.977901373434,
+                40.759757359457
+              ]
+            }
+          }
+        }
+      ],
+      "row_count": 1,
+      "source_fetches": [
+        "recent",
+        "selected_history"
+      ],
+      "conflicts": [],
+      "flags": [],
+      "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+    }
+  ],
+  "claims": [
+    {
+      "text": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+      "camis": "50082702",
+      "inspection_date_key": "2026-10-05",
+      "inspection_type": "Cycle Inspection / Initial Inspection",
+      "source_ids": [
+        "g-50082702-2026-10-05-cycle-inspection-initial-inspection-24a4b5c5"
+      ],
+      "excerpts": [
+        {
+          "source_id": "g-50082702-2026-10-05-cycle-inspection-initial-inspection-24a4b5c5",
+          "quote": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan."
+        }
+      ]
+    }
+  ],
+  "gaps": [
+    "SNAPSHOT_LIMITED: bounded snapshot; coverage beyond retained rows is unknown",
+    "SNAPSHOT_LIMITED: sampled records do not establish citywide completeness or current conditions"
+  ],
+  "status": "partial",
+  "counters": {
+    "elastic_logical": 2,
+    "recovery_logical": 0,
+    "recovery_rounds": 0,
+    "mistral_chat": 1
+  },
+  "timings": {
+    "lexical": 0.076,
+    "semantic": 0.544,
+    "answer": 3.594,
+    "total": 4.214
+  },
+  "integration": {
+    "elasticsearch_index": "literallock_nyc_inspections",
+    "mistral_chat_model": "codestral-latest",
+    "mistral_answer_enabled": true
+  },
+  "lessons_applied": [
+    "Copy each excerpt character-for-character from exact_excerpt_options; never paraphrase or normalize punctuation inside an excerpt; every source_id cited must have an excerpt."
+  ],
+  "attempts": [
+    {
+      "attempt": 1,
+      "proposed": 1,
+      "retained": 1,
+      "removed_reasons": []
+    }
+  ],
+  "model_response": {
+    "assessments": [
+      {
+        "requirement_id": "identity",
+        "status": "supported",
+        "source_ids": [
+          "g-50082702-2026-10-05-cycle-inspection-initial-inspection-24a4b5c5"
+        ],
+        "reason": "The restaurant name, address, and CAMIS are explicitly stated in the source."
+      },
+      {
+        "requirement_id": "inspection_scope",
+        "status": "supported",
+        "source_ids": [
+          "g-50082702-2026-10-05-cycle-inspection-initial-inspection-24a4b5c5"
+        ],
+        "reason": "The inspection type and date are explicitly stated in the source."
+      },
+      {
+        "requirement_id": "findings",
+        "status": "supported",
+        "source_ids": [
+          "g-50082702-2026-10-05-cycle-inspection-initial-inspection-24a4b5c5"
+        ],
+        "reason": "The findings are explicitly stated in the source."
+      },
+      {
+        "requirement_id": "coverage",
+        "status": "supported",
+        "source_ids": [
+          "g-50082702-2026-10-05-cycle-inspection-initial-inspection-24a4b5c5"
+        ],
+        "reason": "The coverage is explicitly stated in the source."
+      }
+    ],
+    "claims": [
+      {
+        "text": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+        "camis": "50082702",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "source_ids": [
+          "g-50082702-2026-10-05-cycle-inspection-initial-inspection-24a4b5c5"
+        ],
+        "excerpts": [
+          {
+            "source_id": "g-50082702-2026-10-05-cycle-inspection-initial-inspection-24a4b5c5",
+            "quote": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan."
+          }
+        ]
+      }
+    ],
+    "gaps": [],
+    "overall_status": "supported"
+  },
+  "ledger": {
+    "runs": 29,
+    "runs_with_rejections": 2,
+    "retries": 0,
+    "retries_improved": 0,
+    "reasons": {
+      "QUOTE_MISSING": {
+        "seen": 2,
+        "fixed_by_retry": 0
+      }
+    },
+    "seeded_from": [
+      "data/codex_distractor_run.json",
+      "data/codex_conceptual_run.json"
+    ],
+    "note": "Seeded 18:49 EDT from tonight's real recorded validator rejections (curly apostrophes); no retry existed then."
+  },
+  "frontend_trace": [
+    "Elastic lexical: 6 groups · 0.08s",
+    "Elastic semantic: 6 groups · 0.54s",
+    "Evidence gate: 1 admissible, 6 rejected by code",
+    "Bundle: 1 groups → Mistral",
+    "Validation: 1 retained claims · 4.214s"
+  ],
+  "frontend_retry_events": []
+}

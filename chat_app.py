@@ -50,6 +50,21 @@ header[data-testid="stHeader"] button[kind="headerNoPadding"] {visibility:visibl
 [data-testid="stBottomBlockContainer"] {max-width:920px;margin:auto;}
 @keyframes fadeIn {from {opacity:0;transform:translateY(6px);} to {opacity:1;transform:translateY(0);}}
 @media(prefers-reduced-motion:reduce){[data-testid="stChatMessage"]{animation:none;}}
+
+.ll-hero{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:4px 0 6px}
+.ll-brand{display:flex;align-items:center;gap:14px}
+.ll-logo{width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#3B82F6,#1D4ED8);display:grid;place-items:center;font-size:24px;box-shadow:0 8px 24px rgba(37,99,235,.35)}
+.ll-title{font-size:2.1rem;font-weight:800;letter-spacing:-.5px;line-height:1.1;margin:0}
+.ll-title span{background:linear-gradient(90deg,#60A5FA,#3B82F6);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ll-tag{color:#94A3B8;font-size:.95rem;margin-top:2px}
+.ll-board{display:inline-block;text-decoration:none!important;color:#93c5fd!important;background:rgba(37,99,235,.12);border:1px solid rgba(37,99,235,.28);border-radius:10px;padding:8px 14px;font-weight:600;font-size:.9rem;white-space:nowrap}
+.ll-board:hover{background:#2563EB;color:#fff!important}
+.ll-badges{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px}
+.ll-badge{font-size:.78rem;color:#cbd5e1;background:#151A24;border:1px solid rgba(255,255,255,.08);border-radius:999px;padding:4px 11px}
+.ll-badge b{color:#60A5FA;font-weight:700}
+.ll-scene{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#64748B;margin:10px 0 4px}
+div[data-testid="stButton"] button{border-radius:12px!important;border:1px solid rgba(255,255,255,.09)!important;background:#12161F!important;transition:all .18s ease!important;min-height:52px}
+div[data-testid="stButton"] button:hover{border-color:rgba(59,130,246,.6)!important;background:#151d2c!important;transform:translateY(-1px);box-shadow:0 6px 18px rgba(37,99,235,.18)}
 </style>""", unsafe_allow_html=True)
 
 EXAMPLES = [
@@ -412,13 +427,35 @@ with st.sidebar:
     with st.expander("Live local ledger"):
         ledger_panel(load_ledger(LESSONS_PATH))
 
-st.title("LiteralLock NYC")
-st.caption("Same name. Different restaurant. Show the evidence.")
+BOARD_URL = "http://127.0.0.1:8503/landing.html"
+st.markdown(f"""<div class="ll-hero"><div class="ll-brand"><div class="ll-logo">🔒</div><div>
+<div class="ll-title">Literal<span>Lock</span> NYC</div>
+<div class="ll-tag">Same name. Different restaurant. Show the evidence.</div></div></div>
+<a class="ll-board" href="{BOARD_URL}" target="_self">▦ Restaurant board</a></div>
+<div class="ll-badges"><span class="ll-badge"><b>Elastic</b> BM25 + semantic_text</span>
+<span class="ll-badge"><b>Mistral</b> mistral-embed · structured answer</span>
+<span class="ll-badge"><b>NYC Open Data</b> 43nn-pn8j · 70 restaurants</span>
+<span class="ll-badge"><b>Code-enforced</b> CAMIS · date · citations</span></div>""", unsafe_allow_html=True)
 
 landing_question = st.query_params.get("q", "").strip()
 if mode == "Live" and landing_question and st.session_state.get("landing_question_consumed") != landing_question:
+    # Pre-fill only: the user reviews/edits the board's question and decides when to run it.
     st.session_state["landing_question_consumed"] = landing_question
-    submit(landing_question)
+    st.session_state["landing_prefill"] = landing_question
+    st.session_state["landing_edit"] = landing_question
+
+if mode == "Live" and st.session_state.get("landing_prefill"):
+    with st.container(border=True):
+        st.markdown("**▦ Question from the restaurant board** — edit it or ask as is. Nothing has run yet.")
+        edited = st.text_input("Question", key="landing_edit", label_visibility="collapsed")
+        c1, c2, _ = st.columns([1.3, 1, 3])
+        if c1.button("▶ Ask LiteralLock", key="landing_ask", type="primary", width="stretch") and edited.strip():
+            st.session_state["landing_prefill"] = None
+            submit(edited.strip())
+            st.rerun()
+        if c2.button("✕ Dismiss", key="landing_dismiss", width="stretch"):
+            st.session_state["landing_prefill"] = None
+            st.rerun()
 
 if mode == "Replay":
     paths = sorted(set(DATA_DIR.glob("*_run.json")) | set((DATA_DIR / "live_runs").glob("*.json")))
@@ -434,11 +471,16 @@ if mode == "Replay":
     st.stop()
 
 if not st.session_state["chat"]:
-    st.markdown("Ask about recorded inspections. Identity, date, and evidence are checked by code.")
+    st.markdown("Ask about recorded inspections — identity, date and evidence are checked by code, not the model.")
+    scene_labels = ["① Vague name · no guessing", "② Identity + date from your words",
+                    "③ Not in the data · no invented answer", "④ Conceptual · semantic-heavy"]
+    cols = st.columns(2)
     for i, example in enumerate(EXAMPLES):
-        if st.button(example, key=f"example-{i}", width="stretch"):
-            submit(example)
-            st.rerun()
+        with cols[i % 2]:
+            st.markdown(f"<div class='ll-scene'>{scene_labels[i]}</div>", unsafe_allow_html=True)
+            if st.button(example, key=f"example-{i}", width="stretch"):
+                submit(example)
+                st.rerun()
 
 for i, turn in enumerate(st.session_state["chat"]):
     render_turn(turn, i)

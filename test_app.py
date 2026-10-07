@@ -88,15 +88,29 @@ def test_chat_ambiguity_runs_separate_scopes_concurrently(offline, tmp_path):
         assert len(calls) == 2, "Rerender must not repeat the candidate runs"
 
 
-def test_chat_landing_query_is_consumed_once(offline):
+def test_chat_landing_query_prefills_and_waits_for_user(offline):
     app = AppTest.from_file(str(ROOT / "chat_app.py"), default_timeout=10)
-    app.query_params["q"] = "What did inspectors find at the Bronx Subway on June 15, 2025?"
+    q = "What did inspectors find at the Bronx Subway on June 15, 2025?"
+    app.query_params["q"] = q
     app.run()
     assert not app.exception
-    assert app.session_state["chat"][0]["question"] == app.query_params["q"]
-    assert len(app.session_state["chat"]) == 2
+    assert app.session_state["chat"] == []                       # nothing runs on arrival
+    assert app.text_input(key="landing_edit").value == q          # question is pre-filled and editable
     app.run()
-    assert len(app.session_state["chat"]) == 2
+    assert app.session_state["chat"] == []                        # still waiting after a rerun
+    edited = "What did inspectors find at the Bronx Subway on October 5?"
+    app.text_input(key="landing_edit").set_value(edited)
+    app.button(key="landing_ask").click().run()
+    assert app.session_state["chat"][0]["question"] == edited      # the user's edited question is what runs
+    assert not app.session_state["landing_prefill"]
+
+
+def test_chat_landing_prefill_can_be_dismissed(offline):
+    app = AppTest.from_file(str(ROOT / "chat_app.py"), default_timeout=10)
+    app.query_params["q"] = "What violations were recorded at Subway?"
+    app.run()
+    app.button(key="landing_dismiss").click().run()
+    assert app.session_state["chat"] == [] and not app.session_state["landing_prefill"]
 
 
 @pytest.mark.parametrize("filename,has_claims", [("subway_exact_run.json", True),

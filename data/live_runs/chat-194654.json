@@ -1,0 +1,4189 @@
+{
+  "query": {
+    "question": "What did inspectors find at SUBWAY on Bruckner Boulevard on October 5, 2026?",
+    "mode": "entity",
+    "camis": "41367337",
+    "inspection_date_key": "2026-10-05",
+    "inspection_type": null,
+    "borough": null,
+    "routing_profile": "exact",
+    "lexical_weight": 0.7,
+    "semantic_weight": 0.3,
+    "requirements": [
+      "identity",
+      "inspection_scope",
+      "findings",
+      "coverage"
+    ]
+  },
+  "snapshot": {
+    "dataset_id": "43nn-pn8j",
+    "source_url": "https://data.cityofnewyork.us/resource/43nn-pn8j.json",
+    "starter_revision": "AvenueJ/elastic-mistral-hacknight nyc_restaurant_analyst.ipynb blob 0b6687be11ffe0ecef3836dfc193a10d55773805",
+    "fetch_parameters": [
+      {
+        "name": "recent",
+        "url": "https://data.cityofnewyork.us/resource/43nn-pn8j.json",
+        "params": {
+          "$limit": 250,
+          "$where": "camis IS NOT NULL AND inspection_date IS NOT NULL",
+          "$order": "inspection_date DESC, camis ASC, violation_code ASC"
+        },
+        "retrieved_at": "2026-10-07T22:18:02+00:00",
+        "row_count": 250,
+        "limit": 250,
+        "cap_reached": true
+      },
+      {
+        "name": "selected_history",
+        "url": "https://data.cityofnewyork.us/resource/43nn-pn8j.json",
+        "params": {
+          "$limit": 250,
+          "$where": "camis IN ('50082702','50097749','41521360','50077029','41367337','41456579','40600383','50117425','50002693','50054023','50086444','50115621','50080428','50101927','41524607') AND inspection_date >= '2024-01-01T00:00:00' AND inspection_date <= '2026-10-06T00:00:00.000'",
+          "$order": "inspection_date DESC, camis ASC, violation_code ASC"
+        },
+        "retrieved_at": "2026-10-07T22:18:07+00:00",
+        "row_count": 241,
+        "limit": 250,
+        "cap_reached": false,
+        "selected_camis": [
+          "50082702",
+          "50097749",
+          "41521360",
+          "50077029",
+          "41367337",
+          "41456579",
+          "40600383",
+          "50117425",
+          "50002693",
+          "50054023",
+          "50086444",
+          "50115621",
+          "50080428",
+          "50101927",
+          "41524607"
+        ],
+        "shared_name_camis_in_recent": {
+          "SUBWAY": [
+            "41367337",
+            "41456579"
+          ],
+          "PARIS BAGUETTE": [
+            "41521360",
+            "50077029"
+          ],
+          "CONVENE": [
+            "50082702",
+            "50097749"
+          ]
+        }
+      }
+    ],
+    "retrieved_at": "2026-10-07T22:18:02+00:00",
+    "snapshot_id": "snap-852ae2e0d2d0",
+    "raw_rows_sha256": "009afa590e3a212ddbfd51dacb9549c7b958dcab6bb99e14f26364e43817c675",
+    "raw_row_count": 491,
+    "unique_raw_row_count": 407,
+    "cross_fetch_duplicate_rows": 84,
+    "identical_rows_within_a_fetch": {},
+    "unique_camis_count": 70,
+    "inspection_group_count": 122,
+    "scope_status_counts": {
+      "valid": 122
+    },
+    "coverage_counts": {
+      "complete_within_snapshot_rows": 121,
+      "possibly_truncated_at_fetch_cap": 1
+    },
+    "cap_reached": true,
+    "coverage_notes": [
+      "Bounded sample: 250 most recent citywide rows plus capped history (since 2024-01-01) for 15 selected CAMIS values. Not full-city coverage.",
+      "The final (date, CAMIS) pair of a capped fetch may be missing rows (coverage=possibly_truncated_at_fetch_cap).",
+      "Other restaurants inspected on the recent fetch's oldest date exist citywide but are absent from this sample.",
+      "An empty lookup means no matching records in this snapshot, not that NYC has no such inspection.",
+      "Grades/scores are recorded snapshot fields, not current restaurant status."
+    ],
+    "grouping_convention": "(camis, inspection_date day, inspection_type)",
+    "ingestion_outcome": {
+      "index": "literallock_nyc_inspections",
+      "inference_id": "literallock-embeddings",
+      "semantic_backend": "semantic_text",
+      "attempted": 122,
+      "indexed": 122,
+      "failed": 0,
+      "failures": [],
+      "docs_for_snapshot_in_index": 122,
+      "docs_in_index_total": 122,
+      "complete": true,
+      "indexed_at": "2026-10-07T22:18:40+00:00"
+    }
+  },
+  "lexical": [
+    {
+      "group_id": "g-41367337-2024-03-08-cycle-inspection-initial-inspection-060cbb6d",
+      "rank": 1,
+      "score": 30.805325,
+      "group": {
+        "group_id": "g-41367337-2024-03-08-cycle-inspection-initial-inspection-060cbb6d",
+        "camis": "41367337",
+        "inspection_date_key": "2024-03-08",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "SUBWAY",
+        "title": "CAMIS 41367337 | SUBWAY | 1646 BRUCKNER BOULEVARD, Bronx 10473 | 2024-03-08 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 41367337\nRestaurant name (DBA): SUBWAY\nAddress: 1646 BRUCKNER BOULEVARD, Bronx 10473\nCuisine: Sandwiches\nInspection date: 2024-03-08\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 26\nGrade: not recorded\nViolations recorded in snapshot (4):\n- 04D [Critical]: Food worker/food vendor does not wash hands thoroughly after using the toilet, or after coughing, sneezing, smoking, eating, preparing raw foods or otherwise contaminating hands or does not change gloves when required; Worker fails to refrain from smoking or being fully clothed in clean outer garments.\n- 04L [Critical]: Evidence of mice or live mice in establishment's food or non-food areas.\n- 06D [Critical]: Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.\n- 08A [Not Critical]: Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+        "raw_row_ids": [
+          "r-8052a97cf461e155",
+          "r-4486ec5c93b40675",
+          "r-6cbc0c06b285c8ed",
+          "r-5cefe37430a9e0ea"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "SUBWAY"
+        ],
+        "boro": "Bronx",
+        "boro_values": [
+          "Bronx"
+        ],
+        "building": "1646",
+        "street": "BRUCKNER BOULEVARD",
+        "zipcode": "10473",
+        "address": "1646 BRUCKNER BOULEVARD, Bronx 10473",
+        "cuisine_description": "Sandwiches",
+        "inspection_date": "2024-03-08",
+        "inspection_date_raw_values": [
+          "2024-03-08T00:00:00.000"
+        ],
+        "score_values": [
+          "26"
+        ],
+        "grade_values": [],
+        "grade_date_values": [],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "04D",
+          "04L",
+          "06D",
+          "08A"
+        ],
+        "critical_flags": [
+          "Critical",
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-8052a97cf461e155",
+            "violation_code": "04D",
+            "violation_description": "Food worker/food vendor does not wash hands thoroughly after using the toilet, or after coughing, sneezing, smoking, eating, preparing raw foods or otherwise contaminating hands or does not change gloves when required; Worker fails to refrain from smoking or being fully clothed in clean outer garments.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-4486ec5c93b40675",
+            "violation_code": "04L",
+            "violation_description": "Evidence of mice or live mice in establishment's food or non-food areas.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-6cbc0c06b285c8ed",
+            "violation_code": "06D",
+            "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-5cefe37430a9e0ea",
+            "violation_code": "08A",
+            "violation_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-8052a97cf461e155",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2024-03-08T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "04D",
+              "violation_description": "Food worker/food vendor does not wash hands thoroughly after using the toilet, or after coughing, sneezing, smoking, eating, preparing raw foods or otherwise contaminating hands or does not change gloves when required; Worker fails to refrain from smoking or being fully clothed in clean outer garments.",
+              "critical_flag": "Critical",
+              "score": "26",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-4486ec5c93b40675",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2024-03-08T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "04L",
+              "violation_description": "Evidence of mice or live mice in establishment's food or non-food areas.",
+              "critical_flag": "Critical",
+              "score": "26",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-6cbc0c06b285c8ed",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2024-03-08T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "06D",
+              "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+              "critical_flag": "Critical",
+              "score": "26",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-5cefe37430a9e0ea",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2024-03-08T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "08A",
+              "violation_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+              "critical_flag": "Not Critical",
+              "score": "26",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 4,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "lexical"
+    },
+    {
+      "group_id": "g-41367337-2025-10-06-cycle-inspection-initial-inspection-6ff89905",
+      "rank": 2,
+      "score": 28.519894,
+      "group": {
+        "group_id": "g-41367337-2025-10-06-cycle-inspection-initial-inspection-6ff89905",
+        "camis": "41367337",
+        "inspection_date_key": "2025-10-06",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "SUBWAY",
+        "title": "CAMIS 41367337 | SUBWAY | 1646 BRUCKNER BOULEVARD, Bronx 10473 | 2025-10-06 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 41367337\nRestaurant name (DBA): SUBWAY\nAddress: 1646 BRUCKNER BOULEVARD, Bronx 10473\nCuisine: Sandwiches\nInspection date: 2025-10-06\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 5\nGrade: A\nViolations recorded in snapshot (1):\n- 06D [Critical]: Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+        "raw_row_ids": [
+          "r-99ca187d2a53b0e8"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "SUBWAY"
+        ],
+        "boro": "Bronx",
+        "boro_values": [
+          "Bronx"
+        ],
+        "building": "1646",
+        "street": "BRUCKNER BOULEVARD",
+        "zipcode": "10473",
+        "address": "1646 BRUCKNER BOULEVARD, Bronx 10473",
+        "cuisine_description": "Sandwiches",
+        "inspection_date": "2025-10-06",
+        "inspection_date_raw_values": [
+          "2025-10-06T00:00:00.000"
+        ],
+        "score_values": [
+          "5"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2025-10-06T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "06D"
+        ],
+        "critical_flags": [
+          "Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-99ca187d2a53b0e8",
+            "violation_code": "06D",
+            "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+            "critical_flag": "Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-99ca187d2a53b0e8",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2025-10-06T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "06D",
+              "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+              "critical_flag": "Critical",
+              "score": "5",
+              "grade": "A",
+              "grade_date": "2025-10-06T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 1,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "lexical"
+    },
+    {
+      "group_id": "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103",
+      "rank": 3,
+      "score": 20.97322,
+      "group": {
+        "group_id": "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103",
+        "camis": "41367337",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "SUBWAY",
+        "title": "CAMIS 41367337 | SUBWAY | 1646 BRUCKNER BOULEVARD, Bronx 10473 | 2026-10-05 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 41367337\nRestaurant name (DBA): SUBWAY\nAddress: 1646 BRUCKNER BOULEVARD, Bronx 10473\nCuisine: Sandwiches\nInspection date: 2026-10-05\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 20\nGrade: not recorded\nViolations recorded in snapshot (5):\n- 04L [Critical]: Evidence of mice or live mice in establishment's food or non-food areas.\n- 06D [Critical]: Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.\n- 08A [Not Critical]: Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.\n- 10A [Not Critical]: Toilet facility not maintained or provided with toilet paper, waste receptacle or self-closing door.\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-7676d82103e91287",
+          "r-69fa984b29d0528c",
+          "r-171cfe90b7e71e3b",
+          "r-8249f9e3b6f0dfd6",
+          "r-3859f2b91aa38766"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "SUBWAY"
+        ],
+        "boro": "Bronx",
+        "boro_values": [
+          "Bronx"
+        ],
+        "building": "1646",
+        "street": "BRUCKNER BOULEVARD",
+        "zipcode": "10473",
+        "address": "1646 BRUCKNER BOULEVARD, Bronx 10473",
+        "cuisine_description": "Sandwiches",
+        "inspection_date": "2026-10-05",
+        "inspection_date_raw_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "score_values": [
+          "20"
+        ],
+        "grade_values": [],
+        "grade_date_values": [],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "04L",
+          "06D",
+          "08A",
+          "10A",
+          "10F"
+        ],
+        "critical_flags": [
+          "Critical",
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-7676d82103e91287",
+            "violation_code": "04L",
+            "violation_description": "Evidence of mice or live mice in establishment's food or non-food areas.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-69fa984b29d0528c",
+            "violation_code": "06D",
+            "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-171cfe90b7e71e3b",
+            "violation_code": "08A",
+            "violation_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+            "critical_flag": "Not Critical"
+          },
+          {
+            "row_id": "r-8249f9e3b6f0dfd6",
+            "violation_code": "10A",
+            "violation_description": "Toilet facility not maintained or provided with toilet paper, waste receptacle or self-closing door.",
+            "critical_flag": "Not Critical"
+          },
+          {
+            "row_id": "r-3859f2b91aa38766",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-7676d82103e91287",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "04L",
+              "violation_description": "Evidence of mice or live mice in establishment's food or non-food areas.",
+              "critical_flag": "Critical",
+              "score": "20",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-69fa984b29d0528c",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "06D",
+              "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+              "critical_flag": "Critical",
+              "score": "20",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-171cfe90b7e71e3b",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "08A",
+              "violation_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+              "critical_flag": "Not Critical",
+              "score": "20",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-8249f9e3b6f0dfd6",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10A",
+              "violation_description": "Toilet facility not maintained or provided with toilet paper, waste receptacle or self-closing door.",
+              "critical_flag": "Not Critical",
+              "score": "20",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-3859f2b91aa38766",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "20",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 5,
+        "source_fetches": [
+          "recent",
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "lexical"
+    },
+    {
+      "group_id": "g-41367337-2024-03-08-administrative-miscellaneous-initial-inspection-bf2d0ab4",
+      "rank": 4,
+      "score": 18.806477,
+      "group": {
+        "group_id": "g-41367337-2024-03-08-administrative-miscellaneous-initial-inspection-bf2d0ab4",
+        "camis": "41367337",
+        "inspection_date_key": "2024-03-08",
+        "inspection_type": "Administrative Miscellaneous / Initial Inspection",
+        "dba": "SUBWAY",
+        "title": "CAMIS 41367337 | SUBWAY | 1646 BRUCKNER BOULEVARD, Bronx 10473 | 2024-03-08 | Administrative Miscellaneous / Initial Inspection",
+        "body": "CAMIS: 41367337\nRestaurant name (DBA): SUBWAY\nAddress: 1646 BRUCKNER BOULEVARD, Bronx 10473\nCuisine: Sandwiches\nInspection date: 2024-03-08\nInspection type: Administrative Miscellaneous / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: not recorded\nGrade: not recorded\nViolations recorded in snapshot (2):\n- 19-06 [Not Critical]: Providing single-use, non-compostable plastic straws to customers without customer request (including providing such straws at a self-serve station)\n- 19-10 [Not Critical]: Failure to display required signage about plastic straw availability",
+        "raw_row_ids": [
+          "r-fcdff103f0f3de3b",
+          "r-5a76a7b681e7bef9"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "SUBWAY"
+        ],
+        "boro": "Bronx",
+        "boro_values": [
+          "Bronx"
+        ],
+        "building": "1646",
+        "street": "BRUCKNER BOULEVARD",
+        "zipcode": "10473",
+        "address": "1646 BRUCKNER BOULEVARD, Bronx 10473",
+        "cuisine_description": "Sandwiches",
+        "inspection_date": "2024-03-08",
+        "inspection_date_raw_values": [
+          "2024-03-08T00:00:00.000"
+        ],
+        "score_values": [],
+        "grade_values": [],
+        "grade_date_values": [],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "19-06",
+          "19-10"
+        ],
+        "critical_flags": [
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-fcdff103f0f3de3b",
+            "violation_code": "19-06",
+            "violation_description": "Providing single-use, non-compostable plastic straws to customers without customer request (including providing such straws at a self-serve station)",
+            "critical_flag": "Not Critical"
+          },
+          {
+            "row_id": "r-5a76a7b681e7bef9",
+            "violation_code": "19-10",
+            "violation_description": "Failure to display required signage about plastic straw availability",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-fcdff103f0f3de3b",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2024-03-08T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "19-06",
+              "violation_description": "Providing single-use, non-compostable plastic straws to customers without customer request (including providing such straws at a self-serve station)",
+              "critical_flag": "Not Critical",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Administrative Miscellaneous / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-5a76a7b681e7bef9",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2024-03-08T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "19-10",
+              "violation_description": "Failure to display required signage about plastic straw availability",
+              "critical_flag": "Not Critical",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Administrative Miscellaneous / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 2,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "lexical"
+    },
+    {
+      "group_id": "g-41367337-2025-01-03-cycle-inspection-re-inspection-82fda591",
+      "rank": 5,
+      "score": 18.806477,
+      "group": {
+        "group_id": "g-41367337-2025-01-03-cycle-inspection-re-inspection-82fda591",
+        "camis": "41367337",
+        "inspection_date_key": "2025-01-03",
+        "inspection_type": "Cycle Inspection / Re-inspection",
+        "dba": "SUBWAY",
+        "title": "CAMIS 41367337 | SUBWAY | 1646 BRUCKNER BOULEVARD, Bronx 10473 | 2025-01-03 | Cycle Inspection / Re-inspection",
+        "body": "CAMIS: 41367337\nRestaurant name (DBA): SUBWAY\nAddress: 1646 BRUCKNER BOULEVARD, Bronx 10473\nCuisine: Sandwiches\nInspection date: 2025-01-03\nInspection type: Cycle Inspection / Re-inspection\nAction: Violations were cited in the following area(s).\nScore: 5\nGrade: A\nViolations recorded in snapshot (2):\n- 10B [Not Critical]: Anti-siphonage or back-flow prevention device not provided where required; equipment or floor not properly drained; sewage disposal system in disrepair or not functioning properly. Condensation or liquid waste improperly disposed of.\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-895ba61e3b0af834",
+          "r-8d9f9decf1d1af53"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "SUBWAY"
+        ],
+        "boro": "Bronx",
+        "boro_values": [
+          "Bronx"
+        ],
+        "building": "1646",
+        "street": "BRUCKNER BOULEVARD",
+        "zipcode": "10473",
+        "address": "1646 BRUCKNER BOULEVARD, Bronx 10473",
+        "cuisine_description": "Sandwiches",
+        "inspection_date": "2025-01-03",
+        "inspection_date_raw_values": [
+          "2025-01-03T00:00:00.000"
+        ],
+        "score_values": [
+          "5"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2025-01-03T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "10B",
+          "10F"
+        ],
+        "critical_flags": [
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-895ba61e3b0af834",
+            "violation_code": "10B",
+            "violation_description": "Anti-siphonage or back-flow prevention device not provided where required; equipment or floor not properly drained; sewage disposal system in disrepair or not functioning properly. Condensation or liquid waste improperly disposed of.",
+            "critical_flag": "Not Critical"
+          },
+          {
+            "row_id": "r-8d9f9decf1d1af53",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-895ba61e3b0af834",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2025-01-03T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10B",
+              "violation_description": "Anti-siphonage or back-flow prevention device not provided where required; equipment or floor not properly drained; sewage disposal system in disrepair or not functioning properly. Condensation or liquid waste improperly disposed of.",
+              "critical_flag": "Not Critical",
+              "score": "5",
+              "grade": "A",
+              "grade_date": "2025-01-03T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Re-inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-8d9f9decf1d1af53",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2025-01-03T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "5",
+              "grade": "A",
+              "grade_date": "2025-01-03T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Re-inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 2,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "lexical"
+    },
+    {
+      "group_id": "g-50097749-2026-10-05-cycle-inspection-initial-inspection-99da9658",
+      "rank": 6,
+      "score": 7.8316965,
+      "group": {
+        "group_id": "g-50097749-2026-10-05-cycle-inspection-initial-inspection-99da9658",
+        "camis": "50097749",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "CONVENE",
+        "title": "CAMIS 50097749 | CONVENE | 530 5 AVENUE, Manhattan 10036 | 2026-10-05 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 50097749\nRestaurant name (DBA): CONVENE\nAddress: 530 5 AVENUE, Manhattan 10036\nCuisine: American\nInspection date: 2026-10-05\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 9\nGrade: A\nViolations recorded in snapshot (2):\n- 04H [Critical]: Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-5cf049ee6995348e",
+          "r-b4cf11226ea28a81"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "CONVENE"
+        ],
+        "boro": "Manhattan",
+        "boro_values": [
+          "Manhattan"
+        ],
+        "building": "530",
+        "street": "5 AVENUE",
+        "zipcode": "10036",
+        "address": "530 5 AVENUE, Manhattan 10036",
+        "cuisine_description": "American",
+        "inspection_date": "2026-10-05",
+        "inspection_date_raw_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "score_values": [
+          "9"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "04H",
+          "10F"
+        ],
+        "critical_flags": [
+          "Critical",
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-5cf049ee6995348e",
+            "violation_code": "04H",
+            "violation_description": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-b4cf11226ea28a81",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-5cf049ee6995348e",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "04H",
+              "violation_description": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+              "critical_flag": "Critical",
+              "score": "9",
+              "grade": "A",
+              "grade_date": "2026-10-05T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-b4cf11226ea28a81",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "9",
+              "grade": "A",
+              "grade_date": "2026-10-05T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 2,
+        "source_fetches": [
+          "recent",
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "lexical"
+    }
+  ],
+  "semantic": [
+    {
+      "group_id": "g-41367337-2025-10-06-cycle-inspection-initial-inspection-6ff89905",
+      "rank": 1,
+      "score": 0.93796116,
+      "group": {
+        "group_id": "g-41367337-2025-10-06-cycle-inspection-initial-inspection-6ff89905",
+        "camis": "41367337",
+        "inspection_date_key": "2025-10-06",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "SUBWAY",
+        "title": "CAMIS 41367337 | SUBWAY | 1646 BRUCKNER BOULEVARD, Bronx 10473 | 2025-10-06 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 41367337\nRestaurant name (DBA): SUBWAY\nAddress: 1646 BRUCKNER BOULEVARD, Bronx 10473\nCuisine: Sandwiches\nInspection date: 2025-10-06\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 5\nGrade: A\nViolations recorded in snapshot (1):\n- 06D [Critical]: Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+        "raw_row_ids": [
+          "r-99ca187d2a53b0e8"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "SUBWAY"
+        ],
+        "boro": "Bronx",
+        "boro_values": [
+          "Bronx"
+        ],
+        "building": "1646",
+        "street": "BRUCKNER BOULEVARD",
+        "zipcode": "10473",
+        "address": "1646 BRUCKNER BOULEVARD, Bronx 10473",
+        "cuisine_description": "Sandwiches",
+        "inspection_date": "2025-10-06",
+        "inspection_date_raw_values": [
+          "2025-10-06T00:00:00.000"
+        ],
+        "score_values": [
+          "5"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2025-10-06T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "06D"
+        ],
+        "critical_flags": [
+          "Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-99ca187d2a53b0e8",
+            "violation_code": "06D",
+            "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+            "critical_flag": "Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-99ca187d2a53b0e8",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2025-10-06T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "06D",
+              "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+              "critical_flag": "Critical",
+              "score": "5",
+              "grade": "A",
+              "grade_date": "2025-10-06T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 1,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "semantic"
+    },
+    {
+      "group_id": "g-41367337-2025-01-03-cycle-inspection-re-inspection-82fda591",
+      "rank": 2,
+      "score": 0.93526286,
+      "group": {
+        "group_id": "g-41367337-2025-01-03-cycle-inspection-re-inspection-82fda591",
+        "camis": "41367337",
+        "inspection_date_key": "2025-01-03",
+        "inspection_type": "Cycle Inspection / Re-inspection",
+        "dba": "SUBWAY",
+        "title": "CAMIS 41367337 | SUBWAY | 1646 BRUCKNER BOULEVARD, Bronx 10473 | 2025-01-03 | Cycle Inspection / Re-inspection",
+        "body": "CAMIS: 41367337\nRestaurant name (DBA): SUBWAY\nAddress: 1646 BRUCKNER BOULEVARD, Bronx 10473\nCuisine: Sandwiches\nInspection date: 2025-01-03\nInspection type: Cycle Inspection / Re-inspection\nAction: Violations were cited in the following area(s).\nScore: 5\nGrade: A\nViolations recorded in snapshot (2):\n- 10B [Not Critical]: Anti-siphonage or back-flow prevention device not provided where required; equipment or floor not properly drained; sewage disposal system in disrepair or not functioning properly. Condensation or liquid waste improperly disposed of.\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-895ba61e3b0af834",
+          "r-8d9f9decf1d1af53"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "SUBWAY"
+        ],
+        "boro": "Bronx",
+        "boro_values": [
+          "Bronx"
+        ],
+        "building": "1646",
+        "street": "BRUCKNER BOULEVARD",
+        "zipcode": "10473",
+        "address": "1646 BRUCKNER BOULEVARD, Bronx 10473",
+        "cuisine_description": "Sandwiches",
+        "inspection_date": "2025-01-03",
+        "inspection_date_raw_values": [
+          "2025-01-03T00:00:00.000"
+        ],
+        "score_values": [
+          "5"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2025-01-03T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "10B",
+          "10F"
+        ],
+        "critical_flags": [
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-895ba61e3b0af834",
+            "violation_code": "10B",
+            "violation_description": "Anti-siphonage or back-flow prevention device not provided where required; equipment or floor not properly drained; sewage disposal system in disrepair or not functioning properly. Condensation or liquid waste improperly disposed of.",
+            "critical_flag": "Not Critical"
+          },
+          {
+            "row_id": "r-8d9f9decf1d1af53",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-895ba61e3b0af834",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2025-01-03T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10B",
+              "violation_description": "Anti-siphonage or back-flow prevention device not provided where required; equipment or floor not properly drained; sewage disposal system in disrepair or not functioning properly. Condensation or liquid waste improperly disposed of.",
+              "critical_flag": "Not Critical",
+              "score": "5",
+              "grade": "A",
+              "grade_date": "2025-01-03T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Re-inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-8d9f9decf1d1af53",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2025-01-03T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "5",
+              "grade": "A",
+              "grade_date": "2025-01-03T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Re-inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 2,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "semantic"
+    },
+    {
+      "group_id": "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103",
+      "rank": 3,
+      "score": 0.9352144,
+      "group": {
+        "group_id": "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103",
+        "camis": "41367337",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "SUBWAY",
+        "title": "CAMIS 41367337 | SUBWAY | 1646 BRUCKNER BOULEVARD, Bronx 10473 | 2026-10-05 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 41367337\nRestaurant name (DBA): SUBWAY\nAddress: 1646 BRUCKNER BOULEVARD, Bronx 10473\nCuisine: Sandwiches\nInspection date: 2026-10-05\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 20\nGrade: not recorded\nViolations recorded in snapshot (5):\n- 04L [Critical]: Evidence of mice or live mice in establishment's food or non-food areas.\n- 06D [Critical]: Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.\n- 08A [Not Critical]: Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.\n- 10A [Not Critical]: Toilet facility not maintained or provided with toilet paper, waste receptacle or self-closing door.\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-7676d82103e91287",
+          "r-69fa984b29d0528c",
+          "r-171cfe90b7e71e3b",
+          "r-8249f9e3b6f0dfd6",
+          "r-3859f2b91aa38766"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "SUBWAY"
+        ],
+        "boro": "Bronx",
+        "boro_values": [
+          "Bronx"
+        ],
+        "building": "1646",
+        "street": "BRUCKNER BOULEVARD",
+        "zipcode": "10473",
+        "address": "1646 BRUCKNER BOULEVARD, Bronx 10473",
+        "cuisine_description": "Sandwiches",
+        "inspection_date": "2026-10-05",
+        "inspection_date_raw_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "score_values": [
+          "20"
+        ],
+        "grade_values": [],
+        "grade_date_values": [],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "04L",
+          "06D",
+          "08A",
+          "10A",
+          "10F"
+        ],
+        "critical_flags": [
+          "Critical",
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-7676d82103e91287",
+            "violation_code": "04L",
+            "violation_description": "Evidence of mice or live mice in establishment's food or non-food areas.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-69fa984b29d0528c",
+            "violation_code": "06D",
+            "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-171cfe90b7e71e3b",
+            "violation_code": "08A",
+            "violation_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+            "critical_flag": "Not Critical"
+          },
+          {
+            "row_id": "r-8249f9e3b6f0dfd6",
+            "violation_code": "10A",
+            "violation_description": "Toilet facility not maintained or provided with toilet paper, waste receptacle or self-closing door.",
+            "critical_flag": "Not Critical"
+          },
+          {
+            "row_id": "r-3859f2b91aa38766",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-7676d82103e91287",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "04L",
+              "violation_description": "Evidence of mice or live mice in establishment's food or non-food areas.",
+              "critical_flag": "Critical",
+              "score": "20",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-69fa984b29d0528c",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "06D",
+              "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+              "critical_flag": "Critical",
+              "score": "20",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-171cfe90b7e71e3b",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "08A",
+              "violation_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+              "critical_flag": "Not Critical",
+              "score": "20",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-8249f9e3b6f0dfd6",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10A",
+              "violation_description": "Toilet facility not maintained or provided with toilet paper, waste receptacle or self-closing door.",
+              "critical_flag": "Not Critical",
+              "score": "20",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-3859f2b91aa38766",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "20",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 5,
+        "source_fetches": [
+          "recent",
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "semantic"
+    },
+    {
+      "group_id": "g-41367337-2024-03-08-cycle-inspection-initial-inspection-060cbb6d",
+      "rank": 4,
+      "score": 0.9320121,
+      "group": {
+        "group_id": "g-41367337-2024-03-08-cycle-inspection-initial-inspection-060cbb6d",
+        "camis": "41367337",
+        "inspection_date_key": "2024-03-08",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "SUBWAY",
+        "title": "CAMIS 41367337 | SUBWAY | 1646 BRUCKNER BOULEVARD, Bronx 10473 | 2024-03-08 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 41367337\nRestaurant name (DBA): SUBWAY\nAddress: 1646 BRUCKNER BOULEVARD, Bronx 10473\nCuisine: Sandwiches\nInspection date: 2024-03-08\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 26\nGrade: not recorded\nViolations recorded in snapshot (4):\n- 04D [Critical]: Food worker/food vendor does not wash hands thoroughly after using the toilet, or after coughing, sneezing, smoking, eating, preparing raw foods or otherwise contaminating hands or does not change gloves when required; Worker fails to refrain from smoking or being fully clothed in clean outer garments.\n- 04L [Critical]: Evidence of mice or live mice in establishment's food or non-food areas.\n- 06D [Critical]: Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.\n- 08A [Not Critical]: Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+        "raw_row_ids": [
+          "r-8052a97cf461e155",
+          "r-4486ec5c93b40675",
+          "r-6cbc0c06b285c8ed",
+          "r-5cefe37430a9e0ea"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "SUBWAY"
+        ],
+        "boro": "Bronx",
+        "boro_values": [
+          "Bronx"
+        ],
+        "building": "1646",
+        "street": "BRUCKNER BOULEVARD",
+        "zipcode": "10473",
+        "address": "1646 BRUCKNER BOULEVARD, Bronx 10473",
+        "cuisine_description": "Sandwiches",
+        "inspection_date": "2024-03-08",
+        "inspection_date_raw_values": [
+          "2024-03-08T00:00:00.000"
+        ],
+        "score_values": [
+          "26"
+        ],
+        "grade_values": [],
+        "grade_date_values": [],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "04D",
+          "04L",
+          "06D",
+          "08A"
+        ],
+        "critical_flags": [
+          "Critical",
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-8052a97cf461e155",
+            "violation_code": "04D",
+            "violation_description": "Food worker/food vendor does not wash hands thoroughly after using the toilet, or after coughing, sneezing, smoking, eating, preparing raw foods or otherwise contaminating hands or does not change gloves when required; Worker fails to refrain from smoking or being fully clothed in clean outer garments.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-4486ec5c93b40675",
+            "violation_code": "04L",
+            "violation_description": "Evidence of mice or live mice in establishment's food or non-food areas.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-6cbc0c06b285c8ed",
+            "violation_code": "06D",
+            "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-5cefe37430a9e0ea",
+            "violation_code": "08A",
+            "violation_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-8052a97cf461e155",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2024-03-08T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "04D",
+              "violation_description": "Food worker/food vendor does not wash hands thoroughly after using the toilet, or after coughing, sneezing, smoking, eating, preparing raw foods or otherwise contaminating hands or does not change gloves when required; Worker fails to refrain from smoking or being fully clothed in clean outer garments.",
+              "critical_flag": "Critical",
+              "score": "26",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-4486ec5c93b40675",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2024-03-08T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "04L",
+              "violation_description": "Evidence of mice or live mice in establishment's food or non-food areas.",
+              "critical_flag": "Critical",
+              "score": "26",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-6cbc0c06b285c8ed",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2024-03-08T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "06D",
+              "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+              "critical_flag": "Critical",
+              "score": "26",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-5cefe37430a9e0ea",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2024-03-08T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "08A",
+              "violation_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+              "critical_flag": "Not Critical",
+              "score": "26",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 4,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "semantic"
+    },
+    {
+      "group_id": "g-41367337-2024-03-08-administrative-miscellaneous-initial-inspection-bf2d0ab4",
+      "rank": 5,
+      "score": 0.92830527,
+      "group": {
+        "group_id": "g-41367337-2024-03-08-administrative-miscellaneous-initial-inspection-bf2d0ab4",
+        "camis": "41367337",
+        "inspection_date_key": "2024-03-08",
+        "inspection_type": "Administrative Miscellaneous / Initial Inspection",
+        "dba": "SUBWAY",
+        "title": "CAMIS 41367337 | SUBWAY | 1646 BRUCKNER BOULEVARD, Bronx 10473 | 2024-03-08 | Administrative Miscellaneous / Initial Inspection",
+        "body": "CAMIS: 41367337\nRestaurant name (DBA): SUBWAY\nAddress: 1646 BRUCKNER BOULEVARD, Bronx 10473\nCuisine: Sandwiches\nInspection date: 2024-03-08\nInspection type: Administrative Miscellaneous / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: not recorded\nGrade: not recorded\nViolations recorded in snapshot (2):\n- 19-06 [Not Critical]: Providing single-use, non-compostable plastic straws to customers without customer request (including providing such straws at a self-serve station)\n- 19-10 [Not Critical]: Failure to display required signage about plastic straw availability",
+        "raw_row_ids": [
+          "r-fcdff103f0f3de3b",
+          "r-5a76a7b681e7bef9"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "SUBWAY"
+        ],
+        "boro": "Bronx",
+        "boro_values": [
+          "Bronx"
+        ],
+        "building": "1646",
+        "street": "BRUCKNER BOULEVARD",
+        "zipcode": "10473",
+        "address": "1646 BRUCKNER BOULEVARD, Bronx 10473",
+        "cuisine_description": "Sandwiches",
+        "inspection_date": "2024-03-08",
+        "inspection_date_raw_values": [
+          "2024-03-08T00:00:00.000"
+        ],
+        "score_values": [],
+        "grade_values": [],
+        "grade_date_values": [],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "19-06",
+          "19-10"
+        ],
+        "critical_flags": [
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-fcdff103f0f3de3b",
+            "violation_code": "19-06",
+            "violation_description": "Providing single-use, non-compostable plastic straws to customers without customer request (including providing such straws at a self-serve station)",
+            "critical_flag": "Not Critical"
+          },
+          {
+            "row_id": "r-5a76a7b681e7bef9",
+            "violation_code": "19-10",
+            "violation_description": "Failure to display required signage about plastic straw availability",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-fcdff103f0f3de3b",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2024-03-08T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "19-06",
+              "violation_description": "Providing single-use, non-compostable plastic straws to customers without customer request (including providing such straws at a self-serve station)",
+              "critical_flag": "Not Critical",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Administrative Miscellaneous / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-5a76a7b681e7bef9",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2024-03-08T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "19-10",
+              "violation_description": "Failure to display required signage about plastic straw availability",
+              "critical_flag": "Not Critical",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Administrative Miscellaneous / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 2,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "semantic"
+    },
+    {
+      "group_id": "g-41456579-2026-10-05-cycle-inspection-initial-inspection-633772bb",
+      "rank": 6,
+      "score": 0.91875476,
+      "group": {
+        "group_id": "g-41456579-2026-10-05-cycle-inspection-initial-inspection-633772bb",
+        "camis": "41456579",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "SUBWAY",
+        "title": "CAMIS 41456579 | SUBWAY | 2011 CHURCH AVENUE, Brooklyn 11226 | 2026-10-05 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 41456579\nRestaurant name (DBA): SUBWAY\nAddress: 2011 CHURCH AVENUE, Brooklyn 11226\nCuisine: Sandwiches\nInspection date: 2026-10-05\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 2\nGrade: A\nViolations recorded in snapshot (1):\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-91e3edc1fa5a5dea"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "SUBWAY"
+        ],
+        "boro": "Brooklyn",
+        "boro_values": [
+          "Brooklyn"
+        ],
+        "building": "2011",
+        "street": "CHURCH AVENUE",
+        "zipcode": "11226",
+        "address": "2011 CHURCH AVENUE, Brooklyn 11226",
+        "cuisine_description": "Sandwiches",
+        "inspection_date": "2026-10-05",
+        "inspection_date_raw_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "score_values": [
+          "2"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "10F"
+        ],
+        "critical_flags": [
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-91e3edc1fa5a5dea",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-91e3edc1fa5a5dea",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41456579",
+              "dba": "SUBWAY",
+              "boro": "Brooklyn",
+              "building": "2011",
+              "street": "CHURCH AVENUE",
+              "zipcode": "11226",
+              "phone": "7184844646",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "2",
+              "grade": "A",
+              "grade_date": "2026-10-05T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.650110183329",
+              "longitude": "-73.960780368158",
+              "community_board": "314",
+              "council_district": "40",
+              "census_tract": "050801",
+              "bin": "3116557",
+              "bbl": "3050810043",
+              "nta": "BK42",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.960780368158,
+                  40.650110183329
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 1,
+        "source_fetches": [
+          "recent",
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "branch": "semantic"
+    }
+  ],
+  "candidates": [
+    {
+      "group_id": "g-41367337-2025-10-06-cycle-inspection-initial-inspection-6ff89905",
+      "group": {
+        "group_id": "g-41367337-2025-10-06-cycle-inspection-initial-inspection-6ff89905",
+        "camis": "41367337",
+        "inspection_date_key": "2025-10-06",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "SUBWAY",
+        "title": "CAMIS 41367337 | SUBWAY | 1646 BRUCKNER BOULEVARD, Bronx 10473 | 2025-10-06 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 41367337\nRestaurant name (DBA): SUBWAY\nAddress: 1646 BRUCKNER BOULEVARD, Bronx 10473\nCuisine: Sandwiches\nInspection date: 2025-10-06\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 5\nGrade: A\nViolations recorded in snapshot (1):\n- 06D [Critical]: Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+        "raw_row_ids": [
+          "r-99ca187d2a53b0e8"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "SUBWAY"
+        ],
+        "boro": "Bronx",
+        "boro_values": [
+          "Bronx"
+        ],
+        "building": "1646",
+        "street": "BRUCKNER BOULEVARD",
+        "zipcode": "10473",
+        "address": "1646 BRUCKNER BOULEVARD, Bronx 10473",
+        "cuisine_description": "Sandwiches",
+        "inspection_date": "2025-10-06",
+        "inspection_date_raw_values": [
+          "2025-10-06T00:00:00.000"
+        ],
+        "score_values": [
+          "5"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2025-10-06T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "06D"
+        ],
+        "critical_flags": [
+          "Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-99ca187d2a53b0e8",
+            "violation_code": "06D",
+            "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+            "critical_flag": "Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-99ca187d2a53b0e8",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2025-10-06T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "06D",
+              "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+              "critical_flag": "Critical",
+              "score": "5",
+              "grade": "A",
+              "grade_date": "2025-10-06T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 1,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "fused_score": 0.016208355367530406,
+      "provenance": "initial",
+      "lexical_rank": 2,
+      "lexical_score": 28.519894,
+      "semantic_rank": 1,
+      "semantic_score": 0.93796116,
+      "accepted": false,
+      "reason": "DATE_MISMATCH"
+    },
+    {
+      "group_id": "g-41367337-2024-03-08-cycle-inspection-initial-inspection-060cbb6d",
+      "group": {
+        "group_id": "g-41367337-2024-03-08-cycle-inspection-initial-inspection-060cbb6d",
+        "camis": "41367337",
+        "inspection_date_key": "2024-03-08",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "SUBWAY",
+        "title": "CAMIS 41367337 | SUBWAY | 1646 BRUCKNER BOULEVARD, Bronx 10473 | 2024-03-08 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 41367337\nRestaurant name (DBA): SUBWAY\nAddress: 1646 BRUCKNER BOULEVARD, Bronx 10473\nCuisine: Sandwiches\nInspection date: 2024-03-08\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 26\nGrade: not recorded\nViolations recorded in snapshot (4):\n- 04D [Critical]: Food worker/food vendor does not wash hands thoroughly after using the toilet, or after coughing, sneezing, smoking, eating, preparing raw foods or otherwise contaminating hands or does not change gloves when required; Worker fails to refrain from smoking or being fully clothed in clean outer garments.\n- 04L [Critical]: Evidence of mice or live mice in establishment's food or non-food areas.\n- 06D [Critical]: Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.\n- 08A [Not Critical]: Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+        "raw_row_ids": [
+          "r-8052a97cf461e155",
+          "r-4486ec5c93b40675",
+          "r-6cbc0c06b285c8ed",
+          "r-5cefe37430a9e0ea"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "SUBWAY"
+        ],
+        "boro": "Bronx",
+        "boro_values": [
+          "Bronx"
+        ],
+        "building": "1646",
+        "street": "BRUCKNER BOULEVARD",
+        "zipcode": "10473",
+        "address": "1646 BRUCKNER BOULEVARD, Bronx 10473",
+        "cuisine_description": "Sandwiches",
+        "inspection_date": "2024-03-08",
+        "inspection_date_raw_values": [
+          "2024-03-08T00:00:00.000"
+        ],
+        "score_values": [
+          "26"
+        ],
+        "grade_values": [],
+        "grade_date_values": [],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "04D",
+          "04L",
+          "06D",
+          "08A"
+        ],
+        "critical_flags": [
+          "Critical",
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-8052a97cf461e155",
+            "violation_code": "04D",
+            "violation_description": "Food worker/food vendor does not wash hands thoroughly after using the toilet, or after coughing, sneezing, smoking, eating, preparing raw foods or otherwise contaminating hands or does not change gloves when required; Worker fails to refrain from smoking or being fully clothed in clean outer garments.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-4486ec5c93b40675",
+            "violation_code": "04L",
+            "violation_description": "Evidence of mice or live mice in establishment's food or non-food areas.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-6cbc0c06b285c8ed",
+            "violation_code": "06D",
+            "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-5cefe37430a9e0ea",
+            "violation_code": "08A",
+            "violation_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-8052a97cf461e155",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2024-03-08T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "04D",
+              "violation_description": "Food worker/food vendor does not wash hands thoroughly after using the toilet, or after coughing, sneezing, smoking, eating, preparing raw foods or otherwise contaminating hands or does not change gloves when required; Worker fails to refrain from smoking or being fully clothed in clean outer garments.",
+              "critical_flag": "Critical",
+              "score": "26",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-4486ec5c93b40675",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2024-03-08T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "04L",
+              "violation_description": "Evidence of mice or live mice in establishment's food or non-food areas.",
+              "critical_flag": "Critical",
+              "score": "26",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-6cbc0c06b285c8ed",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2024-03-08T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "06D",
+              "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+              "critical_flag": "Critical",
+              "score": "26",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-5cefe37430a9e0ea",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2024-03-08T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "08A",
+              "violation_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+              "critical_flag": "Not Critical",
+              "score": "26",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 4,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "fused_score": 0.016162909836065574,
+      "provenance": "initial",
+      "lexical_rank": 1,
+      "lexical_score": 30.805325,
+      "semantic_rank": 4,
+      "semantic_score": 0.9320121,
+      "accepted": false,
+      "reason": "DATE_MISMATCH"
+    },
+    {
+      "group_id": "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103",
+      "group": {
+        "group_id": "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103",
+        "camis": "41367337",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "SUBWAY",
+        "title": "CAMIS 41367337 | SUBWAY | 1646 BRUCKNER BOULEVARD, Bronx 10473 | 2026-10-05 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 41367337\nRestaurant name (DBA): SUBWAY\nAddress: 1646 BRUCKNER BOULEVARD, Bronx 10473\nCuisine: Sandwiches\nInspection date: 2026-10-05\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 20\nGrade: not recorded\nViolations recorded in snapshot (5):\n- 04L [Critical]: Evidence of mice or live mice in establishment's food or non-food areas.\n- 06D [Critical]: Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.\n- 08A [Not Critical]: Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.\n- 10A [Not Critical]: Toilet facility not maintained or provided with toilet paper, waste receptacle or self-closing door.\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-7676d82103e91287",
+          "r-69fa984b29d0528c",
+          "r-171cfe90b7e71e3b",
+          "r-8249f9e3b6f0dfd6",
+          "r-3859f2b91aa38766"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "SUBWAY"
+        ],
+        "boro": "Bronx",
+        "boro_values": [
+          "Bronx"
+        ],
+        "building": "1646",
+        "street": "BRUCKNER BOULEVARD",
+        "zipcode": "10473",
+        "address": "1646 BRUCKNER BOULEVARD, Bronx 10473",
+        "cuisine_description": "Sandwiches",
+        "inspection_date": "2026-10-05",
+        "inspection_date_raw_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "score_values": [
+          "20"
+        ],
+        "grade_values": [],
+        "grade_date_values": [],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "04L",
+          "06D",
+          "08A",
+          "10A",
+          "10F"
+        ],
+        "critical_flags": [
+          "Critical",
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-7676d82103e91287",
+            "violation_code": "04L",
+            "violation_description": "Evidence of mice or live mice in establishment's food or non-food areas.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-69fa984b29d0528c",
+            "violation_code": "06D",
+            "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-171cfe90b7e71e3b",
+            "violation_code": "08A",
+            "violation_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+            "critical_flag": "Not Critical"
+          },
+          {
+            "row_id": "r-8249f9e3b6f0dfd6",
+            "violation_code": "10A",
+            "violation_description": "Toilet facility not maintained or provided with toilet paper, waste receptacle or self-closing door.",
+            "critical_flag": "Not Critical"
+          },
+          {
+            "row_id": "r-3859f2b91aa38766",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-7676d82103e91287",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "04L",
+              "violation_description": "Evidence of mice or live mice in establishment's food or non-food areas.",
+              "critical_flag": "Critical",
+              "score": "20",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-69fa984b29d0528c",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "06D",
+              "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+              "critical_flag": "Critical",
+              "score": "20",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-171cfe90b7e71e3b",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "08A",
+              "violation_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+              "critical_flag": "Not Critical",
+              "score": "20",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-8249f9e3b6f0dfd6",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10A",
+              "violation_description": "Toilet facility not maintained or provided with toilet paper, waste receptacle or self-closing door.",
+              "critical_flag": "Not Critical",
+              "score": "20",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-3859f2b91aa38766",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "20",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 5,
+        "source_fetches": [
+          "recent",
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "fused_score": 0.015873015873015872,
+      "provenance": "initial",
+      "lexical_rank": 3,
+      "lexical_score": 20.97322,
+      "semantic_rank": 3,
+      "semantic_score": 0.9352144,
+      "accepted": true,
+      "reason": "ENTITY_MATCH"
+    },
+    {
+      "group_id": "g-41367337-2025-01-03-cycle-inspection-re-inspection-82fda591",
+      "group": {
+        "group_id": "g-41367337-2025-01-03-cycle-inspection-re-inspection-82fda591",
+        "camis": "41367337",
+        "inspection_date_key": "2025-01-03",
+        "inspection_type": "Cycle Inspection / Re-inspection",
+        "dba": "SUBWAY",
+        "title": "CAMIS 41367337 | SUBWAY | 1646 BRUCKNER BOULEVARD, Bronx 10473 | 2025-01-03 | Cycle Inspection / Re-inspection",
+        "body": "CAMIS: 41367337\nRestaurant name (DBA): SUBWAY\nAddress: 1646 BRUCKNER BOULEVARD, Bronx 10473\nCuisine: Sandwiches\nInspection date: 2025-01-03\nInspection type: Cycle Inspection / Re-inspection\nAction: Violations were cited in the following area(s).\nScore: 5\nGrade: A\nViolations recorded in snapshot (2):\n- 10B [Not Critical]: Anti-siphonage or back-flow prevention device not provided where required; equipment or floor not properly drained; sewage disposal system in disrepair or not functioning properly. Condensation or liquid waste improperly disposed of.\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-895ba61e3b0af834",
+          "r-8d9f9decf1d1af53"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "SUBWAY"
+        ],
+        "boro": "Bronx",
+        "boro_values": [
+          "Bronx"
+        ],
+        "building": "1646",
+        "street": "BRUCKNER BOULEVARD",
+        "zipcode": "10473",
+        "address": "1646 BRUCKNER BOULEVARD, Bronx 10473",
+        "cuisine_description": "Sandwiches",
+        "inspection_date": "2025-01-03",
+        "inspection_date_raw_values": [
+          "2025-01-03T00:00:00.000"
+        ],
+        "score_values": [
+          "5"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2025-01-03T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "10B",
+          "10F"
+        ],
+        "critical_flags": [
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-895ba61e3b0af834",
+            "violation_code": "10B",
+            "violation_description": "Anti-siphonage or back-flow prevention device not provided where required; equipment or floor not properly drained; sewage disposal system in disrepair or not functioning properly. Condensation or liquid waste improperly disposed of.",
+            "critical_flag": "Not Critical"
+          },
+          {
+            "row_id": "r-8d9f9decf1d1af53",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-895ba61e3b0af834",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2025-01-03T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10B",
+              "violation_description": "Anti-siphonage or back-flow prevention device not provided where required; equipment or floor not properly drained; sewage disposal system in disrepair or not functioning properly. Condensation or liquid waste improperly disposed of.",
+              "critical_flag": "Not Critical",
+              "score": "5",
+              "grade": "A",
+              "grade_date": "2025-01-03T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Re-inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-8d9f9decf1d1af53",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2025-01-03T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "5",
+              "grade": "A",
+              "grade_date": "2025-01-03T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Re-inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 2,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "fused_score": 0.015607940446650124,
+      "provenance": "initial",
+      "lexical_rank": 5,
+      "lexical_score": 18.806477,
+      "semantic_rank": 2,
+      "semantic_score": 0.93526286,
+      "accepted": false,
+      "reason": "DATE_MISMATCH"
+    },
+    {
+      "group_id": "g-41367337-2024-03-08-administrative-miscellaneous-initial-inspection-bf2d0ab4",
+      "group": {
+        "group_id": "g-41367337-2024-03-08-administrative-miscellaneous-initial-inspection-bf2d0ab4",
+        "camis": "41367337",
+        "inspection_date_key": "2024-03-08",
+        "inspection_type": "Administrative Miscellaneous / Initial Inspection",
+        "dba": "SUBWAY",
+        "title": "CAMIS 41367337 | SUBWAY | 1646 BRUCKNER BOULEVARD, Bronx 10473 | 2024-03-08 | Administrative Miscellaneous / Initial Inspection",
+        "body": "CAMIS: 41367337\nRestaurant name (DBA): SUBWAY\nAddress: 1646 BRUCKNER BOULEVARD, Bronx 10473\nCuisine: Sandwiches\nInspection date: 2024-03-08\nInspection type: Administrative Miscellaneous / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: not recorded\nGrade: not recorded\nViolations recorded in snapshot (2):\n- 19-06 [Not Critical]: Providing single-use, non-compostable plastic straws to customers without customer request (including providing such straws at a self-serve station)\n- 19-10 [Not Critical]: Failure to display required signage about plastic straw availability",
+        "raw_row_ids": [
+          "r-fcdff103f0f3de3b",
+          "r-5a76a7b681e7bef9"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "SUBWAY"
+        ],
+        "boro": "Bronx",
+        "boro_values": [
+          "Bronx"
+        ],
+        "building": "1646",
+        "street": "BRUCKNER BOULEVARD",
+        "zipcode": "10473",
+        "address": "1646 BRUCKNER BOULEVARD, Bronx 10473",
+        "cuisine_description": "Sandwiches",
+        "inspection_date": "2024-03-08",
+        "inspection_date_raw_values": [
+          "2024-03-08T00:00:00.000"
+        ],
+        "score_values": [],
+        "grade_values": [],
+        "grade_date_values": [],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "19-06",
+          "19-10"
+        ],
+        "critical_flags": [
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-fcdff103f0f3de3b",
+            "violation_code": "19-06",
+            "violation_description": "Providing single-use, non-compostable plastic straws to customers without customer request (including providing such straws at a self-serve station)",
+            "critical_flag": "Not Critical"
+          },
+          {
+            "row_id": "r-5a76a7b681e7bef9",
+            "violation_code": "19-10",
+            "violation_description": "Failure to display required signage about plastic straw availability",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-fcdff103f0f3de3b",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2024-03-08T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "19-06",
+              "violation_description": "Providing single-use, non-compostable plastic straws to customers without customer request (including providing such straws at a self-serve station)",
+              "critical_flag": "Not Critical",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Administrative Miscellaneous / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-5a76a7b681e7bef9",
+            "fetches": [
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41367337",
+              "dba": "SUBWAY",
+              "boro": "Bronx",
+              "building": "1646",
+              "street": "BRUCKNER BOULEVARD",
+              "zipcode": "10473",
+              "phone": "7188421280",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2024-03-08T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "19-10",
+              "violation_description": "Failure to display required signage about plastic straw availability",
+              "critical_flag": "Not Critical",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Administrative Miscellaneous / Initial Inspection",
+              "latitude": "40.824026926714",
+              "longitude": "-73.873635272519",
+              "community_board": "209",
+              "council_district": "18",
+              "census_tract": "002800",
+              "bin": "2094827",
+              "bbl": "2036530050",
+              "nta": "BX09",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.873635272519,
+                  40.824026926714
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 2,
+        "source_fetches": [
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "fused_score": 0.015552884615384614,
+      "provenance": "initial",
+      "lexical_rank": 4,
+      "lexical_score": 18.806477,
+      "semantic_rank": 5,
+      "semantic_score": 0.92830527,
+      "accepted": false,
+      "reason": "DATE_MISMATCH"
+    },
+    {
+      "group_id": "g-50097749-2026-10-05-cycle-inspection-initial-inspection-99da9658",
+      "group": {
+        "group_id": "g-50097749-2026-10-05-cycle-inspection-initial-inspection-99da9658",
+        "camis": "50097749",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "CONVENE",
+        "title": "CAMIS 50097749 | CONVENE | 530 5 AVENUE, Manhattan 10036 | 2026-10-05 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 50097749\nRestaurant name (DBA): CONVENE\nAddress: 530 5 AVENUE, Manhattan 10036\nCuisine: American\nInspection date: 2026-10-05\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 9\nGrade: A\nViolations recorded in snapshot (2):\n- 04H [Critical]: Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-5cf049ee6995348e",
+          "r-b4cf11226ea28a81"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "CONVENE"
+        ],
+        "boro": "Manhattan",
+        "boro_values": [
+          "Manhattan"
+        ],
+        "building": "530",
+        "street": "5 AVENUE",
+        "zipcode": "10036",
+        "address": "530 5 AVENUE, Manhattan 10036",
+        "cuisine_description": "American",
+        "inspection_date": "2026-10-05",
+        "inspection_date_raw_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "score_values": [
+          "9"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "04H",
+          "10F"
+        ],
+        "critical_flags": [
+          "Critical",
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-5cf049ee6995348e",
+            "violation_code": "04H",
+            "violation_description": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+            "critical_flag": "Critical"
+          },
+          {
+            "row_id": "r-b4cf11226ea28a81",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-5cf049ee6995348e",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "04H",
+              "violation_description": "Raw, cooked or prepared food is adulterated, contaminated, cross-contaminated, or not discarded in accordance with HACCP plan.",
+              "critical_flag": "Critical",
+              "score": "9",
+              "grade": "A",
+              "grade_date": "2026-10-05T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          },
+          {
+            "row_id": "r-b4cf11226ea28a81",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "50097749",
+              "dba": "CONVENE",
+              "boro": "Manhattan",
+              "building": "530",
+              "street": "5 AVENUE",
+              "zipcode": "10036",
+              "phone": "9297889610",
+              "cuisine_description": "American",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "9",
+              "grade": "A",
+              "grade_date": "2026-10-05T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.754872051544",
+              "longitude": "-73.97987736481",
+              "community_board": "105",
+              "council_district": "04",
+              "census_tract": "009600",
+              "bin": "1034227",
+              "bbl": "1012607503",
+              "nta": "MN17",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.97987736481,
+                  40.754872051544
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 2,
+        "source_fetches": [
+          "recent",
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "fused_score": 0.010606060606060605,
+      "provenance": "initial",
+      "lexical_rank": 6,
+      "lexical_score": 7.8316965,
+      "accepted": false,
+      "reason": "ENTITY_MISMATCH"
+    },
+    {
+      "group_id": "g-41456579-2026-10-05-cycle-inspection-initial-inspection-633772bb",
+      "group": {
+        "group_id": "g-41456579-2026-10-05-cycle-inspection-initial-inspection-633772bb",
+        "camis": "41456579",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "dba": "SUBWAY",
+        "title": "CAMIS 41456579 | SUBWAY | 2011 CHURCH AVENUE, Brooklyn 11226 | 2026-10-05 | Cycle Inspection / Initial Inspection",
+        "body": "CAMIS: 41456579\nRestaurant name (DBA): SUBWAY\nAddress: 2011 CHURCH AVENUE, Brooklyn 11226\nCuisine: Sandwiches\nInspection date: 2026-10-05\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 2\nGrade: A\nViolations recorded in snapshot (1):\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+        "raw_row_ids": [
+          "r-91e3edc1fa5a5dea"
+        ],
+        "scope_status": "valid",
+        "coverage": "complete_within_snapshot_rows",
+        "snapshot_id": "snap-852ae2e0d2d0",
+        "dataset_id": "43nn-pn8j",
+        "dba_values": [
+          "SUBWAY"
+        ],
+        "boro": "Brooklyn",
+        "boro_values": [
+          "Brooklyn"
+        ],
+        "building": "2011",
+        "street": "CHURCH AVENUE",
+        "zipcode": "11226",
+        "address": "2011 CHURCH AVENUE, Brooklyn 11226",
+        "cuisine_description": "Sandwiches",
+        "inspection_date": "2026-10-05",
+        "inspection_date_raw_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "score_values": [
+          "2"
+        ],
+        "grade_values": [
+          "A"
+        ],
+        "grade_date_values": [
+          "2026-10-05T00:00:00.000"
+        ],
+        "action_values": [
+          "Violations were cited in the following area(s)."
+        ],
+        "violation_codes": [
+          "10F"
+        ],
+        "critical_flags": [
+          "Not Critical"
+        ],
+        "violations": [
+          {
+            "row_id": "r-91e3edc1fa5a5dea",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical"
+          }
+        ],
+        "raw_rows": [
+          {
+            "row_id": "r-91e3edc1fa5a5dea",
+            "fetches": [
+              "recent",
+              "selected_history"
+            ],
+            "fields": {
+              "camis": "41456579",
+              "dba": "SUBWAY",
+              "boro": "Brooklyn",
+              "building": "2011",
+              "street": "CHURCH AVENUE",
+              "zipcode": "11226",
+              "phone": "7184844646",
+              "cuisine_description": "Sandwiches",
+              "inspection_date": "2026-10-05T00:00:00.000",
+              "action": "Violations were cited in the following area(s).",
+              "violation_code": "10F",
+              "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+              "critical_flag": "Not Critical",
+              "score": "2",
+              "grade": "A",
+              "grade_date": "2026-10-05T00:00:00.000",
+              "record_date": "2026-10-07T06:00:21.000",
+              "inspection_type": "Cycle Inspection / Initial Inspection",
+              "latitude": "40.650110183329",
+              "longitude": "-73.960780368158",
+              "community_board": "314",
+              "council_district": "40",
+              "census_tract": "050801",
+              "bin": "3116557",
+              "bbl": "3050810043",
+              "nta": "BK42",
+              "location": {
+                "type": "Point",
+                "coordinates": [
+                  -73.960780368158,
+                  40.650110183329
+                ]
+              }
+            }
+          }
+        ],
+        "row_count": 1,
+        "source_fetches": [
+          "recent",
+          "selected_history"
+        ],
+        "conflicts": [],
+        "flags": [],
+        "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+      },
+      "fused_score": 0.004545454545454545,
+      "provenance": "initial",
+      "semantic_rank": 6,
+      "semantic_score": 0.91875476,
+      "accepted": false,
+      "reason": "ENTITY_MISMATCH"
+    }
+  ],
+  "evidence": [
+    {
+      "group_id": "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103",
+      "camis": "41367337",
+      "inspection_date_key": "2026-10-05",
+      "inspection_type": "Cycle Inspection / Initial Inspection",
+      "dba": "SUBWAY",
+      "title": "CAMIS 41367337 | SUBWAY | 1646 BRUCKNER BOULEVARD, Bronx 10473 | 2026-10-05 | Cycle Inspection / Initial Inspection",
+      "body": "CAMIS: 41367337\nRestaurant name (DBA): SUBWAY\nAddress: 1646 BRUCKNER BOULEVARD, Bronx 10473\nCuisine: Sandwiches\nInspection date: 2026-10-05\nInspection type: Cycle Inspection / Initial Inspection\nAction: Violations were cited in the following area(s).\nScore: 20\nGrade: not recorded\nViolations recorded in snapshot (5):\n- 04L [Critical]: Evidence of mice or live mice in establishment's food or non-food areas.\n- 06D [Critical]: Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.\n- 08A [Not Critical]: Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.\n- 10A [Not Critical]: Toilet facility not maintained or provided with toilet paper, waste receptacle or self-closing door.\n- 10F [Not Critical]: Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+      "raw_row_ids": [
+        "r-7676d82103e91287",
+        "r-69fa984b29d0528c",
+        "r-171cfe90b7e71e3b",
+        "r-8249f9e3b6f0dfd6",
+        "r-3859f2b91aa38766"
+      ],
+      "scope_status": "valid",
+      "coverage": "complete_within_snapshot_rows",
+      "snapshot_id": "snap-852ae2e0d2d0",
+      "dataset_id": "43nn-pn8j",
+      "dba_values": [
+        "SUBWAY"
+      ],
+      "boro": "Bronx",
+      "boro_values": [
+        "Bronx"
+      ],
+      "building": "1646",
+      "street": "BRUCKNER BOULEVARD",
+      "zipcode": "10473",
+      "address": "1646 BRUCKNER BOULEVARD, Bronx 10473",
+      "cuisine_description": "Sandwiches",
+      "inspection_date": "2026-10-05",
+      "inspection_date_raw_values": [
+        "2026-10-05T00:00:00.000"
+      ],
+      "score_values": [
+        "20"
+      ],
+      "grade_values": [],
+      "grade_date_values": [],
+      "action_values": [
+        "Violations were cited in the following area(s)."
+      ],
+      "violation_codes": [
+        "04L",
+        "06D",
+        "08A",
+        "10A",
+        "10F"
+      ],
+      "critical_flags": [
+        "Critical",
+        "Not Critical"
+      ],
+      "violations": [
+        {
+          "row_id": "r-7676d82103e91287",
+          "violation_code": "04L",
+          "violation_description": "Evidence of mice or live mice in establishment's food or non-food areas.",
+          "critical_flag": "Critical"
+        },
+        {
+          "row_id": "r-69fa984b29d0528c",
+          "violation_code": "06D",
+          "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+          "critical_flag": "Critical"
+        },
+        {
+          "row_id": "r-171cfe90b7e71e3b",
+          "violation_code": "08A",
+          "violation_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+          "critical_flag": "Not Critical"
+        },
+        {
+          "row_id": "r-8249f9e3b6f0dfd6",
+          "violation_code": "10A",
+          "violation_description": "Toilet facility not maintained or provided with toilet paper, waste receptacle or self-closing door.",
+          "critical_flag": "Not Critical"
+        },
+        {
+          "row_id": "r-3859f2b91aa38766",
+          "violation_code": "10F",
+          "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+          "critical_flag": "Not Critical"
+        }
+      ],
+      "raw_rows": [
+        {
+          "row_id": "r-7676d82103e91287",
+          "fetches": [
+            "recent",
+            "selected_history"
+          ],
+          "fields": {
+            "camis": "41367337",
+            "dba": "SUBWAY",
+            "boro": "Bronx",
+            "building": "1646",
+            "street": "BRUCKNER BOULEVARD",
+            "zipcode": "10473",
+            "phone": "7188421280",
+            "cuisine_description": "Sandwiches",
+            "inspection_date": "2026-10-05T00:00:00.000",
+            "action": "Violations were cited in the following area(s).",
+            "violation_code": "04L",
+            "violation_description": "Evidence of mice or live mice in establishment's food or non-food areas.",
+            "critical_flag": "Critical",
+            "score": "20",
+            "record_date": "2026-10-07T06:00:21.000",
+            "inspection_type": "Cycle Inspection / Initial Inspection",
+            "latitude": "40.824026926714",
+            "longitude": "-73.873635272519",
+            "community_board": "209",
+            "council_district": "18",
+            "census_tract": "002800",
+            "bin": "2094827",
+            "bbl": "2036530050",
+            "nta": "BX09",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -73.873635272519,
+                40.824026926714
+              ]
+            }
+          }
+        },
+        {
+          "row_id": "r-69fa984b29d0528c",
+          "fetches": [
+            "recent",
+            "selected_history"
+          ],
+          "fields": {
+            "camis": "41367337",
+            "dba": "SUBWAY",
+            "boro": "Bronx",
+            "building": "1646",
+            "street": "BRUCKNER BOULEVARD",
+            "zipcode": "10473",
+            "phone": "7188421280",
+            "cuisine_description": "Sandwiches",
+            "inspection_date": "2026-10-05T00:00:00.000",
+            "action": "Violations were cited in the following area(s).",
+            "violation_code": "06D",
+            "violation_description": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+            "critical_flag": "Critical",
+            "score": "20",
+            "record_date": "2026-10-07T06:00:21.000",
+            "inspection_type": "Cycle Inspection / Initial Inspection",
+            "latitude": "40.824026926714",
+            "longitude": "-73.873635272519",
+            "community_board": "209",
+            "council_district": "18",
+            "census_tract": "002800",
+            "bin": "2094827",
+            "bbl": "2036530050",
+            "nta": "BX09",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -73.873635272519,
+                40.824026926714
+              ]
+            }
+          }
+        },
+        {
+          "row_id": "r-171cfe90b7e71e3b",
+          "fetches": [
+            "recent",
+            "selected_history"
+          ],
+          "fields": {
+            "camis": "41367337",
+            "dba": "SUBWAY",
+            "boro": "Bronx",
+            "building": "1646",
+            "street": "BRUCKNER BOULEVARD",
+            "zipcode": "10473",
+            "phone": "7188421280",
+            "cuisine_description": "Sandwiches",
+            "inspection_date": "2026-10-05T00:00:00.000",
+            "action": "Violations were cited in the following area(s).",
+            "violation_code": "08A",
+            "violation_description": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+            "critical_flag": "Not Critical",
+            "score": "20",
+            "record_date": "2026-10-07T06:00:21.000",
+            "inspection_type": "Cycle Inspection / Initial Inspection",
+            "latitude": "40.824026926714",
+            "longitude": "-73.873635272519",
+            "community_board": "209",
+            "council_district": "18",
+            "census_tract": "002800",
+            "bin": "2094827",
+            "bbl": "2036530050",
+            "nta": "BX09",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -73.873635272519,
+                40.824026926714
+              ]
+            }
+          }
+        },
+        {
+          "row_id": "r-8249f9e3b6f0dfd6",
+          "fetches": [
+            "recent",
+            "selected_history"
+          ],
+          "fields": {
+            "camis": "41367337",
+            "dba": "SUBWAY",
+            "boro": "Bronx",
+            "building": "1646",
+            "street": "BRUCKNER BOULEVARD",
+            "zipcode": "10473",
+            "phone": "7188421280",
+            "cuisine_description": "Sandwiches",
+            "inspection_date": "2026-10-05T00:00:00.000",
+            "action": "Violations were cited in the following area(s).",
+            "violation_code": "10A",
+            "violation_description": "Toilet facility not maintained or provided with toilet paper, waste receptacle or self-closing door.",
+            "critical_flag": "Not Critical",
+            "score": "20",
+            "record_date": "2026-10-07T06:00:21.000",
+            "inspection_type": "Cycle Inspection / Initial Inspection",
+            "latitude": "40.824026926714",
+            "longitude": "-73.873635272519",
+            "community_board": "209",
+            "council_district": "18",
+            "census_tract": "002800",
+            "bin": "2094827",
+            "bbl": "2036530050",
+            "nta": "BX09",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -73.873635272519,
+                40.824026926714
+              ]
+            }
+          }
+        },
+        {
+          "row_id": "r-3859f2b91aa38766",
+          "fetches": [
+            "recent",
+            "selected_history"
+          ],
+          "fields": {
+            "camis": "41367337",
+            "dba": "SUBWAY",
+            "boro": "Bronx",
+            "building": "1646",
+            "street": "BRUCKNER BOULEVARD",
+            "zipcode": "10473",
+            "phone": "7188421280",
+            "cuisine_description": "Sandwiches",
+            "inspection_date": "2026-10-05T00:00:00.000",
+            "action": "Violations were cited in the following area(s).",
+            "violation_code": "10F",
+            "violation_description": "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit.",
+            "critical_flag": "Not Critical",
+            "score": "20",
+            "record_date": "2026-10-07T06:00:21.000",
+            "inspection_type": "Cycle Inspection / Initial Inspection",
+            "latitude": "40.824026926714",
+            "longitude": "-73.873635272519",
+            "community_board": "209",
+            "council_district": "18",
+            "census_tract": "002800",
+            "bin": "2094827",
+            "bbl": "2036530050",
+            "nta": "BX09",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -73.873635272519,
+                40.824026926714
+              ]
+            }
+          }
+        }
+      ],
+      "row_count": 5,
+      "source_fetches": [
+        "recent",
+        "selected_history"
+      ],
+      "conflicts": [],
+      "flags": [],
+      "grouping_convention": "(camis, inspection_date day, inspection_type); application grouping, not an agency inspection ID"
+    }
+  ],
+  "claims": [
+    {
+      "text": "Evidence of mice or live mice in establishment's food or non-food areas.",
+      "camis": "41367337",
+      "inspection_date_key": "2026-10-05",
+      "inspection_type": "Cycle Inspection / Initial Inspection",
+      "source_ids": [
+        "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103"
+      ],
+      "excerpts": [
+        {
+          "source_id": "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103",
+          "quote": "Evidence of mice or live mice in establishment's food or non-food areas."
+        }
+      ]
+    },
+    {
+      "text": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+      "camis": "41367337",
+      "inspection_date_key": "2026-10-05",
+      "inspection_type": "Cycle Inspection / Initial Inspection",
+      "source_ids": [
+        "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103"
+      ],
+      "excerpts": [
+        {
+          "source_id": "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103",
+          "quote": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred."
+        }
+      ]
+    },
+    {
+      "text": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+      "camis": "41367337",
+      "inspection_date_key": "2026-10-05",
+      "inspection_type": "Cycle Inspection / Initial Inspection",
+      "source_ids": [
+        "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103"
+      ],
+      "excerpts": [
+        {
+          "source_id": "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103",
+          "quote": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests."
+        }
+      ]
+    },
+    {
+      "text": "Toilet facility not maintained or provided with toilet paper, waste receptacle or self-closing door.",
+      "camis": "41367337",
+      "inspection_date_key": "2026-10-05",
+      "inspection_type": "Cycle Inspection / Initial Inspection",
+      "source_ids": [
+        "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103"
+      ],
+      "excerpts": [
+        {
+          "source_id": "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103",
+          "quote": "Toilet facility not maintained or provided with toilet paper, waste receptacle or self-closing door."
+        }
+      ]
+    }
+  ],
+  "gaps": [
+    "SNAPSHOT_LIMITED: bounded snapshot; coverage beyond retained rows is unknown",
+    "MODEL_REPORTED_GAPS: 1 unverified items; inspect raw model response",
+    "SNAPSHOT_LIMITED: sampled records do not establish citywide completeness or current conditions"
+  ],
+  "status": "partial",
+  "counters": {
+    "elastic_logical": 2,
+    "recovery_logical": 0,
+    "recovery_rounds": 0,
+    "mistral_chat": 1
+  },
+  "timings": {
+    "lexical": 0.081,
+    "semantic": 0.484,
+    "answer": 8.569,
+    "total": 9.135
+  },
+  "integration": {
+    "elasticsearch_index": "literallock_nyc_inspections",
+    "mistral_chat_model": "codestral-latest",
+    "mistral_answer_enabled": true
+  },
+  "lessons_applied": [
+    "Copy each excerpt character-for-character from exact_excerpt_options; never paraphrase or normalize punctuation inside an excerpt; every source_id cited must have an excerpt."
+  ],
+  "attempts": [
+    {
+      "attempt": 1,
+      "proposed": 4,
+      "retained": 4,
+      "removed_reasons": []
+    }
+  ],
+  "model_response": {
+    "assessments": [
+      {
+        "requirement_id": "identity",
+        "status": "supported",
+        "source_ids": [
+          "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103"
+        ],
+        "reason": "The restaurant identity is clearly stated in the source."
+      },
+      {
+        "requirement_id": "inspection_scope",
+        "status": "supported",
+        "source_ids": [
+          "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103"
+        ],
+        "reason": "The inspection scope is clearly stated in the source."
+      },
+      {
+        "requirement_id": "findings",
+        "status": "supported",
+        "source_ids": [
+          "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103"
+        ],
+        "reason": "The findings are clearly stated in the source."
+      },
+      {
+        "requirement_id": "coverage",
+        "status": "supported",
+        "source_ids": [
+          "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103"
+        ],
+        "reason": "The coverage is clearly stated in the source."
+      }
+    ],
+    "claims": [
+      {
+        "text": "Evidence of mice or live mice in establishment's food or non-food areas.",
+        "camis": "41367337",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "source_ids": [
+          "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103"
+        ],
+        "excerpts": [
+          {
+            "source_id": "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103",
+            "quote": "Evidence of mice or live mice in establishment's food or non-food areas."
+          }
+        ]
+      },
+      {
+        "text": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred.",
+        "camis": "41367337",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "source_ids": [
+          "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103"
+        ],
+        "excerpts": [
+          {
+            "source_id": "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103",
+            "quote": "Food contact surface not properly washed, rinsed and sanitized after each use and following any activity when contamination may have occurred."
+          }
+        ]
+      },
+      {
+        "text": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests.",
+        "camis": "41367337",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "source_ids": [
+          "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103"
+        ],
+        "excerpts": [
+          {
+            "source_id": "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103",
+            "quote": "Establishment is not free of harborage or conditions conducive to rodents, insects or other pests."
+          }
+        ]
+      },
+      {
+        "text": "Toilet facility not maintained or provided with toilet paper, waste receptacle or self-closing door.",
+        "camis": "41367337",
+        "inspection_date_key": "2026-10-05",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "source_ids": [
+          "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103"
+        ],
+        "excerpts": [
+          {
+            "source_id": "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103",
+            "quote": "Toilet facility not maintained or provided with toilet paper, waste receptacle or self-closing door."
+          }
+        ]
+      }
+    ],
+    "gaps": [
+      "Non-food contact surface or equipment made of unacceptable material, not kept clean, or not properly sealed, raised, spaced or movable to allow accessibility for cleaning on all sides, above and underneath the unit."
+    ],
+    "overall_status": "partial"
+  },
+  "ledger": {
+    "runs": 31,
+    "runs_with_rejections": 2,
+    "retries": 0,
+    "retries_improved": 0,
+    "reasons": {
+      "QUOTE_MISSING": {
+        "seen": 2,
+        "fixed_by_retry": 0
+      }
+    },
+    "seeded_from": [
+      "data/codex_distractor_run.json",
+      "data/codex_conceptual_run.json"
+    ],
+    "note": "Seeded 18:49 EDT from tonight's real recorded validator rejections (curly apostrophes); no retry existed then."
+  },
+  "frontend_trace": [
+    "Elastic lexical: 6 groups · 0.08s",
+    "Elastic semantic: 6 groups · 0.48s",
+    "Evidence gate: 1 admissible, 6 rejected by code",
+    "Bundle: 1 groups → Mistral",
+    "Validation: 4 retained claims · 9.135s"
+  ],
+  "frontend_retry_events": []
+}
