@@ -1,0 +1,147 @@
+{
+  "snapshot_id": "snap-852ae2e0d2d0",
+  "cases": [
+    {
+      "case": "exact",
+      "query": {
+        "question": "Explain the recorded violation descriptions for this selected inspection.",
+        "mode": "entity",
+        "camis": "41521360",
+        "inspection_date_key": "2024-06-11",
+        "inspection_type": "Calorie Posting / Initial Inspection",
+        "borough": null,
+        "routing_profile": "exact",
+        "lexical_weight": 0.7,
+        "semantic_weight": 0.3,
+        "requirements": [
+          "identity",
+          "inspection_scope",
+          "findings",
+          "coverage"
+        ]
+      },
+      "status": "partial",
+      "retained_claims": 1,
+      "counters": {
+        "elastic_logical": 2,
+        "recovery_logical": 0,
+        "recovery_rounds": 0,
+        "mistral_chat": 1
+      },
+      "timings": {
+        "lexical": 0.227,
+        "semantic": 0.79,
+        "answer": 7.473,
+        "total": 8.49
+      },
+      "artifact": "data/codex_reviewed_exact_run.json",
+      "manual_review": "retained claims match cited descriptions and native scope; absence verified by exact indexed lookup"
+    },
+    {
+      "case": "distractor",
+      "query": {
+        "question": "Explain the recorded food preparation violations, keeping this inspection type separate from calorie posting.",
+        "mode": "entity",
+        "camis": "41521360",
+        "inspection_date_key": "2024-06-11",
+        "inspection_type": "Cycle Inspection / Initial Inspection",
+        "borough": null,
+        "routing_profile": "exact",
+        "lexical_weight": 0.7,
+        "semantic_weight": 0.3,
+        "requirements": [
+          "identity",
+          "inspection_scope",
+          "findings",
+          "coverage"
+        ]
+      },
+      "status": "partial",
+      "retained_claims": 4,
+      "counters": {
+        "elastic_logical": 2,
+        "recovery_logical": 0,
+        "recovery_rounds": 0,
+        "mistral_chat": 1
+      },
+      "timings": {
+        "lexical": 0.305,
+        "semantic": 0.444,
+        "answer": 8.981,
+        "total": 9.73
+      },
+      "artifact": "data/codex_reviewed_distractor_run.json",
+      "manual_review": "retained claims match cited descriptions and native scope; absence verified by exact indexed lookup"
+    },
+    {
+      "case": "absent",
+      "query": {
+        "question": "What violations were recorded for this selected date?",
+        "mode": "entity",
+        "camis": "41521360",
+        "inspection_date_key": "2024-01-01",
+        "inspection_type": null,
+        "borough": null,
+        "routing_profile": "exact",
+        "lexical_weight": 0.7,
+        "semantic_weight": 0.3,
+        "requirements": [
+          "identity",
+          "inspection_scope",
+          "findings",
+          "coverage"
+        ]
+      },
+      "status": "insufficient",
+      "retained_claims": 0,
+      "counters": {
+        "elastic_logical": 3,
+        "recovery_logical": 1,
+        "recovery_rounds": 1,
+        "mistral_chat": 0
+      },
+      "timings": {
+        "lexical": 0.075,
+        "semantic": 0.346,
+        "total": 0.461
+      },
+      "artifact": "data/codex_reviewed_absent_run.json",
+      "manual_review": "retained claims match cited descriptions and native scope; absence verified by exact indexed lookup"
+    },
+    {
+      "case": "conceptual",
+      "query": {
+        "question": "Which sampled inspections describe pest evidence around food preparation?",
+        "mode": "conceptual",
+        "camis": null,
+        "inspection_date_key": null,
+        "inspection_type": null,
+        "borough": null,
+        "routing_profile": "conceptual",
+        "lexical_weight": 0.3,
+        "semantic_weight": 0.7,
+        "requirements": [
+          "findings",
+          "coverage"
+        ]
+      },
+      "status": "partial",
+      "retained_claims": 4,
+      "counters": {
+        "elastic_logical": 2,
+        "recovery_logical": 0,
+        "recovery_rounds": 0,
+        "mistral_chat": 1
+      },
+      "timings": {
+        "lexical": 0.118,
+        "semantic": 0.37,
+        "answer": 8.956,
+        "total": 9.444
+      },
+      "artifact": "data/codex_reviewed_conceptual_run.json",
+      "manual_review": "retained claims match cited descriptions and native scope; absence verified by exact indexed lookup"
+    }
+  ],
+  "limitations": "Four selected cases, not a benchmark. Initial quote failures preserved separately. Six evaluation runs used five chat calls; each run stayed within its individual budget."
+}

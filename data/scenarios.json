@@ -1,0 +1,77 @@
+{
+ "snapshot_id": "snap-852ae2e0d2d0",
+ "index": "literallock_nyc_inspections",
+ "note": "All identities/dates chosen from the indexed snapshot; nothing fabricated. Exact-lookup counts verified 2026-10-07 ~18:19 EDT.",
+ "cases": [
+  {
+   "case": "exact_identity_date",
+   "question": "What violations were recorded for this Subway restaurant on the selected inspection?",
+   "camis": "41367337",
+   "inspection_date_key": "2026-10-05",
+   "inspection_type": null,
+   "expected_group_ids": [
+    "g-41367337-2026-10-05-cycle-inspection-initial-inspection-631bc103"
+   ],
+   "subject": "SUBWAY, 1646 BRUCKNER BOULEVARD, Bronx 10473; codes 04L,06D,08A,10A,10F; score 20; grade not recorded",
+   "observed_first_pass": "lexical rank 3, semantic rank 1"
+  },
+  {
+   "case": "identity_and_date_distractors",
+   "same_query_as": "exact_identity_date",
+   "wrong_date_distractor": {
+    "group_id": "g-41367337-2024-03-08-cycle-inspection-initial-inspection-060cbb6d",
+    "why": "same CAMIS, other date; also has 04L mice; lexical rank 1 in first pass"
+   },
+   "wrong_entity_distractor": {
+    "camis": "41456579",
+    "dba": "SUBWAY",
+    "address": "2011 CHURCH AVENUE, Brooklyn 11226",
+    "group_id": "g-41456579-2026-10-05-cycle-inspection-initial-inspection-633772bb",
+    "why": "same name, same date, different CAMIS; other-date Brooklyn groups appear in semantic ranks 4-5"
+   },
+   "expected": "distractors excluded with DATE_MISMATCH / ENTITY_MISMATCH"
+  },
+  {
+   "case": "missing_scope",
+   "question": "What violations were recorded for this Subway restaurant on the selected inspection?",
+   "camis": "41367337",
+   "inspection_date_key": "2025-06-15",
+   "inspection_type": null,
+   "verified_exact_lookup_total": 0,
+   "expected": "successful empty exact lookup -> LOOKUP_EMPTY, snapshot-scoped insufficiency; no Mistral claims about that date"
+  },
+  {
+   "case": "conceptual_paraphrase",
+   "question": "Which sampled inspections describe pest evidence such as mice, roaches, or flies around food preparation?",
+   "camis": null,
+   "borough": null,
+   "optional_borough_variant": "Queens",
+   "observed_first_pass": "semantic 6/6 hits carry pest codes (04L/04M/04N); lexical 5/6 (rank 5 is a calorie-posting group)",
+   "expected": "0.3/0.7 profile; examples keep their own CAMIS/date"
+  },
+  {
+   "case": "optional_type_narrowing",
+   "camis": "41367337",
+   "inspection_date_key": "2024-03-08",
+   "groups_on_date": [
+    "g-41367337-2024-03-08-administrative-miscellaneous-initial-inspection-bf2d0ab4",
+    "g-41367337-2024-03-08-cycle-inspection-initial-inspection-060cbb6d"
+   ],
+   "inspection_type": "Cycle Inspection / Initial Inspection",
+   "expected": "without type: two separate groups; with type: TYPE_MISMATCH excludes the administrative group"
+  },
+  {
+   "case": "backup_near_name_pairs",
+   "pairs": {
+    "PARIS BAGUETTE": [
+     "41521360 (Manhattan)",
+     "50077029 (Queens)"
+    ],
+    "CONVENE": [
+     "50082702 (75 Rockefeller Plaza)",
+     "50097749 (530 5 Avenue)"
+    ]
+   }
+  }
+ ]
+}

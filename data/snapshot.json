@@ -1,0 +1,102 @@
+{
+ "dataset_id": "43nn-pn8j",
+ "source_url": "https://data.cityofnewyork.us/resource/43nn-pn8j.json",
+ "starter_revision": "AvenueJ/elastic-mistral-hacknight nyc_restaurant_analyst.ipynb blob 0b6687be11ffe0ecef3836dfc193a10d55773805",
+ "fetch_parameters": [
+  {
+   "name": "recent",
+   "url": "https://data.cityofnewyork.us/resource/43nn-pn8j.json",
+   "params": {
+    "$limit": 250,
+    "$where": "camis IS NOT NULL AND inspection_date IS NOT NULL",
+    "$order": "inspection_date DESC, camis ASC, violation_code ASC"
+   },
+   "retrieved_at": "2026-10-07T22:18:02+00:00",
+   "row_count": 250,
+   "limit": 250,
+   "cap_reached": true
+  },
+  {
+   "name": "selected_history",
+   "url": "https://data.cityofnewyork.us/resource/43nn-pn8j.json",
+   "params": {
+    "$limit": 250,
+    "$where": "camis IN ('50082702','50097749','41521360','50077029','41367337','41456579','40600383','50117425','50002693','50054023','50086444','50115621','50080428','50101927','41524607') AND inspection_date >= '2024-01-01T00:00:00' AND inspection_date <= '2026-10-06T00:00:00.000'",
+    "$order": "inspection_date DESC, camis ASC, violation_code ASC"
+   },
+   "retrieved_at": "2026-10-07T22:18:07+00:00",
+   "row_count": 241,
+   "limit": 250,
+   "cap_reached": false,
+   "selected_camis": [
+    "50082702",
+    "50097749",
+    "41521360",
+    "50077029",
+    "41367337",
+    "41456579",
+    "40600383",
+    "50117425",
+    "50002693",
+    "50054023",
+    "50086444",
+    "50115621",
+    "50080428",
+    "50101927",
+    "41524607"
+   ],
+   "shared_name_camis_in_recent": {
+    "SUBWAY": [
+     "41367337",
+     "41456579"
+    ],
+    "PARIS BAGUETTE": [
+     "41521360",
+     "50077029"
+    ],
+    "CONVENE": [
+     "50082702",
+     "50097749"
+    ]
+   }
+  }
+ ],
+ "retrieved_at": "2026-10-07T22:18:02+00:00",
+ "snapshot_id": "snap-852ae2e0d2d0",
+ "raw_rows_sha256": "009afa590e3a212ddbfd51dacb9549c7b958dcab6bb99e14f26364e43817c675",
+ "raw_row_count": 491,
+ "unique_raw_row_count": 407,
+ "cross_fetch_duplicate_rows": 84,
+ "identical_rows_within_a_fetch": {},
+ "unique_camis_count": 70,
+ "inspection_group_count": 122,
+ "scope_status_counts": {
+  "valid": 122
+ },
+ "coverage_counts": {
+  "complete_within_snapshot_rows": 121,
+  "possibly_truncated_at_fetch_cap": 1
+ },
+ "cap_reached": true,
+ "coverage_notes": [
+  "Bounded sample: 250 most recent citywide rows plus capped history (since 2024-01-01) for 15 selected CAMIS values. Not full-city coverage.",
+  "The final (date, CAMIS) pair of a capped fetch may be missing rows (coverage=possibly_truncated_at_fetch_cap).",
+  "Other restaurants inspected on the recent fetch's oldest date exist citywide but are absent from this sample.",
+  "An empty lookup means no matching records in this snapshot, not that NYC has no such inspection.",
+  "Grades/scores are recorded snapshot fields, not current restaurant status."
+ ],
+ "grouping_convention": "(camis, inspection_date day, inspection_type)",
+ "ingestion_outcome": {
+  "index": "literallock_nyc_inspections",
+  "inference_id": "literallock-embeddings",
+  "semantic_backend": "semantic_text",
+  "attempted": 122,
+  "indexed": 122,
+  "failed": 0,
+  "failures": [],
+  "docs_for_snapshot_in_index": 122,
+  "docs_in_index_total": 122,
+  "complete": true,
+  "indexed_at": "2026-10-07T22:18:40+00:00"
+ }
+}

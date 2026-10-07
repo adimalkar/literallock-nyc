@@ -1,0 +1,17 @@
+{
+ "runs": 28,
+ "runs_with_rejections": 2,
+ "retries": 0,
+ "retries_improved": 0,
+ "reasons": {
+  "QUOTE_MISSING": {
+   "seen": 2,
+   "fixed_by_retry": 0
+  }
+ },
+ "seeded_from": [
+  "data/codex_distractor_run.json",
+  "data/codex_conceptual_run.json"
+ ],
+ "note": "Seeded 18:49 EDT from tonight's real recorded validator rejections (curly apostrophes); no retry existed then."
+}

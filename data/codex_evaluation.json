@@ -1,0 +1,72 @@
+[
+  {
+    "case": "distractor",
+    "status": "insufficient",
+    "claims": 0,
+    "evidence": 1,
+    "counters": {
+      "elastic_logical": 2,
+      "recovery_logical": 0,
+      "recovery_rounds": 0,
+      "mistral_chat": 1
+    },
+    "timings": {
+      "lexical": 0.263,
+      "semantic": 0.426,
+      "answer": 5.275,
+      "total": 5.965
+    },
+    "gaps": [
+      "SNAPSHOT_LIMITED: bounded snapshot; coverage beyond retained rows is unknown",
+      "The inspection did not cover calorie posting.",
+      "The inspection did not cover the overall cleanliness of the restaurant.",
+      "QUOTE_MISSING: removed claim: The restaurant had critical violations related to food preparation and pest control.",
+      "SNAPSHOT_LIMITED: sampled records do not establish citywide completeness or current conditions"
+    ]
+  },
+  {
+    "case": "absent",
+    "status": "insufficient",
+    "claims": 0,
+    "evidence": 0,
+    "counters": {
+      "elastic_logical": 3,
+      "recovery_logical": 1,
+      "recovery_rounds": 1,
+      "mistral_chat": 0
+    },
+    "timings": {
+      "lexical": 0.075,
+      "semantic": 0.346,
+      "total": 0.461
+    },
+    "gaps": [
+      "LOOKUP_EMPTY: no matching evidence in the indexed snapshot",
+      "SNAPSHOT_LIMITED: bounded snapshot; coverage beyond retained rows is unknown"
+    ]
+  },
+  {
+    "case": "conceptual",
+    "status": "insufficient",
+    "claims": 0,
+    "evidence": 4,
+    "counters": {
+      "elastic_logical": 2,
+      "recovery_logical": 0,
+      "recovery_rounds": 0,
+      "mistral_chat": 1
+    },
+    "timings": {
+      "lexical": 0.062,
+      "semantic": 0.407,
+      "answer": 8.67,
+      "total": 9.139
+    },
+    "gaps": [
+      "CONTEXT_EXCERPTED: matching candidate groups exceed the four-group cap",
+      "SNAPSHOT_LIMITED: bounded snapshot; coverage beyond retained rows is unknown",
+      "QUOTE_MISSING: removed claim: Filth flies or food/refuse/sewage associated with (FRSA) flies or other nuisance pests in establishment's food and/or non-food areas.",
+      "SNAPSHOT_LIMITED: sampled records do not establish citywide completeness or current conditions"
+    ]
+  }
+]
